@@ -50,15 +50,17 @@ body{
 }
 
 ul{
-	display:table;
+	display:inline-block;
 	margin:0 auto;
-	position:to;
-	text-align:auto;
-	float:auto;
+	text-align:left;
 }
 
 #para4{
 	position:absolute;
 	TOP:160px;
 	LEFT:675px;
+}
+
+#past{
+	text-align:center;
 }
