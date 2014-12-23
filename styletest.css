@@ -49,6 +49,15 @@ body{
 	margin:0 auto;
 }
 
+#para5{
+	position:absolute;
+	TOP:455px;
+	LEFT:195px;
+	font-family:Arial;
+	font-size:14px;
+	width:855px;
+	margin:0 auto;
+}
 ul{
 	display:inline-block;
 	margin:0 auto;
