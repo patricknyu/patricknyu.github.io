@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  22 APR 2015 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 FEB 2015 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**climtae_cover_letter.tex
-(./climate_cover_letter.tex
+**factset_cover_letter.tex
+(./factset_cover_letter.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/letter.cls
@@ -15,8 +15,8 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \indentedwidth=\dimen103
 \labelcount=\count79
 )
-(./climate_cover_letter.aux)
-\openout1 = `climate_cover_letter.aux'.
+No file factset_cover_letter.aux.
+\openout1 = `factset_cover_letter.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -34,22 +34,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 41.
- [1
+[1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./clim
-ate_cover_letter.aux) ) 
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./factset_cover_letter.aux) ) 
 Here is how much of TeX's memory you used:
- 143 strings out of 493117
- 1612 string characters out of 6135433
+ 140 strings out of 493117
+ 1542 string characters out of 6135433
  55909 words of memory out of 5000000
  3689 multiletter control sequences out of 15000+600000
  4245 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,6n,18p,1083b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb>
-Output written on climate_cover_letter.pdf (1 page, 32453 bytes).
+ 23i,6n,18p,867b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb>
+Output written on factset_cover_letter.pdf (1 page, 32351 bytes).
 PDF statistics:
  16 PDF objects out of 1000 (max. 8388607)
  10 compressed objects within 1 object stream
