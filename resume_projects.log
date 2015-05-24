@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  30 MAR 2015 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  24 MAY 2015 00:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -133,27 +133,27 @@ LaTeX Font Info:    ... okay on input line 12.
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 27.
+(Font)              <7> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 27.
+(Font)              <5> on input line 25.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--36
+Underfull \hbox (badness 10000) in paragraph at lines 27--34
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
  [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] ) 
 Here is how much of TeX's memory you used:
  854 strings out of 493117
  10956 string characters out of 6135433
- 73218 words of memory out of 5000000
+ 74218 words of memory out of 5000000
  4377 multiletter control sequences out of 15000+600000
  4906 words of font info for 18 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -164,7 +164,7 @@ ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on resume_projects.pdf (1 page, 67913 bytes).
+Output written on resume_projects.pdf (1 page, 68736 bytes).
 PDF statistics:
  28 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream
