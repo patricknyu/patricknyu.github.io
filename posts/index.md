@@ -2,7 +2,8 @@
 layout: post-index
 title: All Posts
 image:
-  feature: sample-image-1.jpg
-  creditlink:
+  feature: yosemite2.jpg
+  credit: theilr
+  creditlink: https://www.flickr.com/photos/theilr/9691501959/
 excerpt: "A List of Posts"
 ---
