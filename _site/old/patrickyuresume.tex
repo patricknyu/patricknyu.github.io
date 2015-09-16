@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Graduate Curriculum Vitae
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+% Important note:
+% This template requires the res.cls file to be in the same directory as the
+% .tex file. The res.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[margin, 8pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
+\AtBeginEnvironment{multicols}{\RaggedRight}
+\usepackage{helvet} % Default font is the helvetica postscript font
+%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
+
+\setlength{\textwidth}{5.1in} % Text width of the document
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+\moveleft.5\hoffset\centerline{\large\bf Patrick Yu} % Your name at the top
+ 
+\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
+ 
+\moveleft.5\hoffset\centerline{2614 Warring St. Apt 5} % Your address
+\moveleft.5\hoffset\centerline{Berkeley, CA 94704}
+\moveleft.5\hoffset\centerline{(714) 651-5438}
+
+%----------------------------------------------------------------------------------------
+
+\begin{resume}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE SECTION
+%----------------------------------------------------------------------------------------
+ 
+%\section{OBJECTIVE}  
+
+%A position in the field of computers with special interests in business applications programming, information processing, and management systems. 
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{EDUCATION}
+
+Bachelor of Arts, Applied Mathematics. May 2015\\
+University of California, Berkeley \\
+Concentration: Computer Science\\
+ 
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{COMPUTER \\ SKILLS} 
+
+%{\sl Languages \& Software:} 
+%COBOL, IFPS, Focus, Megacalc, Pascal, Modula2, C, APL, SNOBOL, FORTRAN, LISP, SPIRES, BASIC, VSPC Autotab, IBM 370 Assembler, Lotus 1-2-3. \\
+%{\sl Operating Systems:} MTS, TSO, Unix. 
+ 
+%----------------------------------------------------------------------------------------
+%	PROFESSIONAL EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+ 
+\section{EXPERIENCE}
+{\sl Treasurer, Head Coordinator} \hfill            2013 - 2015\\
+                Project S.M.I.L.E.
+                 \begin{itemize}  \itemsep -2pt %reduce space between items
+                 \item Board member for Project S.M.I.L.E., holding a variety of positions.
+                \item Worked closely with the ASUC, LEAD Center, and Public Service Center, organizing events for 80+ children and mentors.
+		\item Taught a seminar class where I brought in speakers to talk about different topics in education.
+		\item Provided leadership and training to mentors and board members.
+                 \end{itemize}
+%{\sl Seminar Organizer, Education 97/197} \hfill                       2013 - 2015\\
+%                University of California, Berkeley
+%                \begin{itemize} \itemsep -2pt
+%                \item Organized a seminar which brought in speakers for different topics in education.
+%                \end{itemize}
+{\sl Tutor, Mathematics} \hfill 2012 - 2014\\
+		Irvine, Ca
+		\begin{itemize} \itemsep -2pt
+		\item Tutored students of various ages in Math and Science subjects.
+		\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNITY SERVICE SECTION
+%---------------------------------------------------------------------------------------- 
+
+%\section{COMMUNITY \\ SERVICE}
+
+%Organized and directed the 1988 and 1989 Grand Marshall Week \\
+%``Basketball Marathon.'' A 24 hour charity event to benefit the Troy Boys Club. Over 250 people participated each year. 
+
+%----------------------------------------------------------------------------------------
+%	Projects SECTION
+%---------------------------------------------------------------------------------------- 
+
+\section{PROJECTS}Image Recognition
+		\begin{itemize} \itemsep -2pt
+		\item Designed and implemented k-nearest neighbor machine learning algorithms to identity written numbers in jpg images.
+		\end{itemize}
+		Spam Filter
+		\begin{itemize} \itemsep -2pt
+		\item Constructed random forest algorithms to create a spam filter for email data.
+		\end{itemize}
+		Image Compression
+		\begin{itemize} \itemsep -2pt
+		\item Used singular value decomposition to compress the storage size of png files.
+		\end{itemize}
+		PageRank
+		\begin{itemize} \itemsep -2pt
+		\item Designed ranking system using a version of the PageRank algorithm that ranked actors using IMDb ratings through the Beautiful Soup Python package.
+		\end{itemize}
+
+\section{TECHNICAL \\ SKILLS} {\sl Languages \& Software:} Python, Java, Matlab/Octave, 
+         Scheme, Latex, R, Ruby, Git, SQL, Spark, Excel VBA\\
+                {\sl Operating Systems:} Windows, Mac, Unix\\
+								
+\section{COURSE \\ WORK}             
+               \begin{multicols}{2}
+	       \begin{itemize}\itemsep -2pt
+		\item Multivariable Calculus\\
+ 		\item Linear Algebra\\
+		\item Differential Equations\\
+		\item Discrete Mathematics\\
+		\item Numerical Analysis\\
+                \item Abstract Algebra\\
+		\item Cryptography\\
+                \item Structure of Computer Programs\\
+		\item Data Structures\\
+                \item Efficient Algorithms\\
+		\item Probability\\
+		\item Stochastic Processes\\
+		\item Machine Learning\\
+                \item Computing with Data\\
+		\end{itemize}
+	       \end{multicols}
+%----------------------------------------------------------------------------------------
+%	EXTRA-CURRICULAR ACTIVITIES SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{EXTRA-CURRICULAR \\ ACTIVITIES} 
+
+%Elected {\it House Manager}, Rho Phi Sorority \\
+%Elected {\it Sports Chairman} \\
+%Attended Krannet Leadership Conference \\
+%Headed delegation to Rho Phi Congress \\
+%Junior varsity basketball team \\
+%Participant, seven intramural athletic teams 
+
+%----------------------------------------------------------------------------------------
+
+\end{resume}
+\end{document}

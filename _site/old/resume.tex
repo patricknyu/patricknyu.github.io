@@ -1,0 +1,111 @@
+% LaTeX resume using res.cls
+\documentclass[margin]{res}
+\usepackage{multicol}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\setlength{\textwidth}{5.1in} % set width of text portion
+\setlength{\textheight}{9.5in}
+\setlength{\topmargin}{-20pt}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\AtBeginEnvironment{multicols}{\RaggedRight}
+\begin{document}
+
+% Center the name over the entire width of resume:
+ \moveleft.5\hoffset\centerline{\large\bf FirstName LastName}
+% Draw a horizontal line the whole width of resume:
+ \moveleft\hoffset\vbox{\hrule width\resumewidth height .5pt}\smallskip
+% address begins here
+% Again, the address lines must be centered over entire width of resume:
+ \moveleft.5\hoffset\centerline{address1}
+ \moveleft.5\hoffset\centerline{address2}
+ \moveleft.5\hoffset\centerline{email}
+ \moveleft.5\hoffset\centerline{phone}
+
+\begin{resume}
+
+\section{EDUCATION} {\sl Bachelor of Arts,} Applied Mathematics \\
+                      % \sl will be bold italic in New Century Schoolbook (or
+	              % any postscript font) and just slanted in
+		      %	Computer Modern (default) font
+		Concentration: Computer Science \\
+                University of California, Berkeley\\
+		Expected: May 2015 \\
+\section{PROJECTS}Image Recognition
+		\begin{itemize} \itemsep -2pt
+		\item Designed and implemented machine learning algorithms to identity written numbers in images.
+		\end{itemize}
+		Spam Filter
+		\begin{itemize} \itemsep -2pt
+		\item Designed and implemented algorithms to create a spam filter for email data.
+		\end{itemize}
+		Image compression
+		\begin{itemize} \itemsep -2pt
+		\item Implemented singular value decomposition processes to create a percentage based image compression program to decrease the storage size for the image.
+		\end{itemize}
+		Heat Maps
+		\begin{itemize} \itemsep -2pt
+		\item Executed Crank-Nicolson finite difference method to solve the heat equation and track smells moving across a room.
+		\end{itemize}
+		PageRank
+		\begin{itemize} \itemsep -2pt
+		\item Designed ranking system using a version of the PageRank algorithm that ranked actors using IMDb ratings through the Beautiful Soup Python package.
+		\end{itemize}
+\section{EXPERIENCE} {\sl Social Coordinator, Treasurer, Head Coordinator} \hfill            2013 - 2015\\
+                Project S.M.I.L.E.
+                 \begin{itemize}  \itemsep -2pt %reduce space between items
+                 \item Board member for Project S.M.I.L.E. and
+                                held a variety of positions.
+                \item Worked closely with the ASUC, LEAD Center, and Public Service Center, handling a variety of aspects of the club.
+                 \end{itemize}
+                {\sl Seminar Organizer, Education 97/197} \hfill                       2013 - 2015\\
+                University of California, Berkeley
+                \begin{itemize} \itemsep -2pt
+                \item Organized a seminar which brought in speakers for different topics in education.
+                \end{itemize}
+		%{\sl Tutor, Mathematics} \hfill 2012 - 2014\\
+		%Irvine, Ca
+		%\begin{itemize} \itemsep -2pt
+		%\item Tutored students of various ages in Math and Science subjects.
+		%\end{itemize}
+		%{\sl Treasurer} \hfill 2011 - 2012 \\
+                %Hall Association, Residence Hall Assembly \newline
+                %Clark Kerr Campus, Berkeley, CA
+                % \begin{itemize}  \itemsep -2pt %reduce space between items
+                % \item Used the Residence Hall's Ledger system to record all the money
+		%						spent by the Residence Hall Assembly and Hall Association
+		%						of Clark Kerr Campus Dormitory which housed over 900 students.
+                %\end{itemize}
+
+\section{TECHNICAL \\ SKILLS} {\sl Languages \& Software:} Python, Java, Matlab, 
+         Scheme, Latex, R, Ruby, Git, SQL, Spark\\
+                {\sl Operating Systems:} Windows, Mac, Unix
+								
+\section{COURSE \\ WORK}             
+               \begin{multicols}{2}
+	       \begin{itemize}\itemsep -2pt
+		\item Multivariable Calculus\\
+ 		\item Linear Algebra 
+		\item Differential Equations\\
+		\item Discrete Mathematics\\
+                \item Real Analysis\\
+                \item Abstract Algebra\\
+		\item Cryptography\\
+		\item Numerical Analysis\\
+                \item Complex Analysis\\
+                \item Structure of Computer Programs\\
+		\item Data Structures\\
+                \item Efficient Algorithms\\
+		\item Probability and Random Processes\\
+                \item Computing with Data\\
+		\end{itemize}
+	       \end{multicols}
+
+%\section{COMMUNITY \\ SERVICE}  Mentor for Project S.M.I.L.E. 
+%								\newline Member of Cal Rotoract
+%								\newline Finished a Boy Scout Eagle project where I designed, constructed,
+%								and installed three benches at my old elementary school.
+ 
+
+\end{resume}
+\end{document}
