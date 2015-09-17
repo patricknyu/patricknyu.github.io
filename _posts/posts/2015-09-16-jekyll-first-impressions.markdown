@@ -6,7 +6,7 @@ categories: posts
 excerpt:
 tags: []
 image:
-  feature: jekyllrb
+  feature: jekyllrb.png
   credit: jekyllrb.com
   creditlink: https://jekyllrb.com/docs/github-pages/
 date: 2015-09-16T17:21:12-07:00
