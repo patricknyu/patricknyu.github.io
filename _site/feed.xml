@@ -4,13 +4,36 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-09-17T12:43:22-07:00</updated>
+<updated>2015-09-17T13:08:07-07:00</updated>
 <id>/</id>
 <author>
   <name>Patrick Yu</name>
   <uri>/</uri>
   <email>patrickyuemail@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Coursera Machine Learning]]></title>
+  <link rel="alternate" type="text/html" href="/posts/coursera-machine-learning/" />
+  <id>/posts/coursera-machine-learning</id>
+  <published>2015-09-17T13:01:41-07:00</published>
+  <updated>2015-09-17T13:01:41-07:00</updated>
+  <author>
+    <name>Patrick Yu</name>
+    <uri></uri>
+    <email>patrickyuemail@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I just completed the 11 week course in Machine Learning from Coursera.  I already had experience in machine learning and programming in Matlab (Octave was the suggested language for the course), but I still really enjoyed the class.  The course definitely felt a little watered down, I felt that there was a big lack of the difficult math and statistics that is applied in machine learning.  However, it&amp;#39;s completely understandable for an online course to do as such.  I&amp;#39;ll probably try to find another online course with more difficult math/stats in machine learning at another time.  The examples were nice, but I did feel they were a bit dumbed down.  The assignments were fun as well.  A major criticism that I have of the course is the quizzes.  The questions themselves were wonderful, however I felt that the lack of feedback on incorrect solutions really took away a lot form the course.  It was difficult to learn what I was doing wrong when I answered things incorrectly.&lt;/p&gt;
+
+&lt;p&gt;Finally, I want to thank Andrew Ng for teaching the course and Tom Mosher for providing invaluable help to students such as myself.  I&amp;#39;ll be sure to look into Coursera in the future.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/coursera-machine-learning/&quot;&gt;Coursera Machine Learning&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on September 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
