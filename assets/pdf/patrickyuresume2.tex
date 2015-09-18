@@ -20,17 +20,25 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[margin, 8pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
+\documentclass[resmargin, 6pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
 \usepackage{multicol}
 \usepackage{etoolbox}
 \usepackage{ragged2e}
 \usepackage[none]{hyphenat}
+\usepackage[bottom=0.5in,top=0.5in]{geometry}
 \AtBeginEnvironment{multicols}{\RaggedRight}
 \usepackage{helvet} % Default font is the helvetica postscript font
 %\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
-
-\setlength{\textwidth}{5.1in} % Text width of the document
-
+%\usepackage{enumitem}
+%\setlist{nolistsep}
+\setlength{\textwidth}{6.1in} % Text width of the document
+%\sectionskip=1.5ex plus 0.7ex minus -.2ex
+%\topmargin=-0.6in
+\oddsidemargin -.4in
+\evensidemargin -.3in
+\textwidth=6.0in
+%\itemsep=-.2in
+%\parsep=-.2in
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -39,7 +47,7 @@
 
 \moveleft.5\hoffset\centerline{\large\bf Patrick Yu} % Your name at the top
  
-\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
+\moveleft\hoffset\vbox{\hrule width 7.4in height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
  
 \moveleft.5\hoffset\centerline{13381 San Remo} % Your address
 \moveleft.5\hoffset\centerline{Tustin, CA 92782}
@@ -117,18 +125,25 @@ Concentration: Computer Science\\
 \section{PROJECTS}Image Recognition
 		\begin{itemize} \itemsep -2pt
 		\item Designed and implemented k-nearest neighbor machine learning algorithms to identify handwritten numbers.
+		\item The algorithm examined each pixel of a jpg image and compared it to previously classified examples to vote on the classification of the unknown data.
+		\item Written in Python.
 		\end{itemize}
 		Spam Filter
 		\begin{itemize} \itemsep -2pt
-		\item Trained models for varying amounts of decision trees in a random forest algorithm to classify emails as spam or not spam.
+		\item Trained random forest models to identified emails as spam or not spam.
+		\item The random forests contained sets of decision trees classified each email, voting on the outcome.
 		\end{itemize}
 		Image Compression
 		\begin{itemize} \itemsep -2pt
 		\item Used singular value decomposition to compress image file size based on percentage.
+		\item Image colors were represented in a matrix column wise so low-rank approximation could be performed.
+		\item Implemented in Matlab.
 		\end{itemize}
 		PageRank
 		\begin{itemize} \itemsep -2pt
-		\item Applied Google's PageRank algorithm to rank actors based on IMDb ratings through the Beautiful Soup Python package.
+		\item Constructed a ranking system using a version of the PageRank algorithm that ranked actors using IMDb movie ratings.  
+		\item The algorithm crawled through IMDb’s HTML source code - extracting the movies’ ratings to assign a score that factored in movie popularity and other variables.
+		\item Implemented in an iPython notebook and the Beautiful Soup Python package.
 		\end{itemize}
 
 \section{TECHNICAL \\ SKILLS} {\sl Languages \& Software:} Python, Java, Matlab/Octave, 
