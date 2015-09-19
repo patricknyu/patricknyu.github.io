@@ -4,13 +4,162 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-09-17T14:25:41-07:00</updated>
+<updated>2015-09-18T13:24:43-07:00</updated>
 <id>/</id>
 <author>
   <name>Patrick Yu</name>
   <uri>/</uri>
   <email>patrickyuemail@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Github Tag Test]]></title>
+  <link rel="alternate" type="text/html" href="/ctci/github-tag-test/" />
+  <id>/ctci/github-tag-test</id>
+  <published>2015-09-18T13:17:12-07:00</published>
+  <updated>2015-09-18T13:17:12-07:00</updated>
+  <author>
+    <name>Patrick Yu</name>
+    <uri></uri>
+    <email>patrickyuemail@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;div class=&quot;github-sample-reference&quot;&gt;
+  &lt;div class=&quot;author-info&quot;&gt;
+    &lt;a href=&quot;https://github.com/patricknyu/ctcinterview/blob/f8ea3dec3d2c446988deca21477df6bd544eb19a/ch_7/readme.md&quot;&gt;This Github Sample&lt;/a&gt; is by &lt;a href=&quot;https://github.com/patricknyu&quot;&gt;patricknyu&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;meta-info&quot;&gt;
+    ch_7/readme.md &lt;a href=&quot;https://github.com/patricknyu/ctcinterview/blob/f8ea3dec3d2c446988deca21477df6bd544eb19a/ch_7/readme.md&quot;&gt;view&lt;/a&gt; &lt;a href=&quot;https://raw.githubusercontent.com/patricknyu/ctcinterview/f8ea3dec3d2c446988deca21477df6bd544eb19a/ch_7/readme.md&quot;&gt;raw&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;--&amp;gt;
+#Chapter 7
+##Mathematics and Probability
+This is just stuff from the chapter intro that I felt the need to rewrite.
+###Prime Numbers
+* All positive integers can be decomposed into a product of primes.
+* Prime number law states that in order for a number x to divide a number y, all primes in x&amp;#39;s prime factorization must be in y&amp;#39;s factorization.
+* When x = 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;j0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;j1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 5&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;j2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * ... and x = 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;k0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;k1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 5&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;k2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * ...
+* gcd(x,y) = 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;min(j0,k0)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;min(j1,k1)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; *... and lcd(x,y) is the same thing with maxes.
+* if we did gcd * lcd we would get 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;min(j0,k0)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;sup&amp;gt;&lt;/span&gt;max(j0,k0)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sup&amp;gt;&lt;/span&gt; * ... and eventually get gcd*lcd = xy
+
+###Checking for Primality
+```java
+boolean primeNaive(int n)
+{
+    if (n&lt;span class=&quot;nt&quot;&gt;&amp;lt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;i =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2;i&amp;lt;n;i++)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;i =&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;```&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Here&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slightly&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;better&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primeSlightlyBetter&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sqrt =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;(int)&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;i =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;++)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;i =&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;```&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;We&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;see&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;solution&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;faster&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;because&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;needs&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;up&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;works&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;becuase&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;way&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;we&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;don&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;pairs&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;twice&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;###&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Sieve&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Eratosthenes&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;Starts&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;up&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;Then&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;iterates&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;through&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;crosses&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;divisible&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;they&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;gave&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;sieveOfEratosthenes&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;flags =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;count =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;0;&lt;/span&gt;
+    
+    &lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;than&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;prime =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2;&lt;/span&gt;
+
+    &lt;span class=&quot;na&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;crossOff&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;na&quot;&gt;prime =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;getNextPrime(flags,prime);&lt;/span&gt;
+
+        &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;= flags.length)
+        {
+            break;
+        }
+    }
+}
+
+void crossOff(boolean[] flags, int prime)
+{
+    for (int i = prime*prime;i&lt;span class=&quot;nt&quot;&gt;&amp;lt;flags.length&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;getNextPrime&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;next =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;prime+1;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;amp;&amp;amp;!&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;++;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;```&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;easily&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;optimized&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;###&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Probability&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Just&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;formulas&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)*&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;independent&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)*&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mutually&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;exclusive&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;happens&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cannot&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;happen:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;###&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Things&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;watch&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Precision&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;floats&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;doubles&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Don&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assume&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;things&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;integers&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Do&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;assume&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;independence&lt;/span&gt;
+
+
+
+&lt;span class=&quot;err&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;--&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+--&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/ctci/github-tag-test/&quot;&gt;Github Tag Test&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on September 18, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
