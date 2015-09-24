@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Disclosure & Sam Smith - Hotline Bling Cover &#8211; Patrick Yu</title>
+<title>Problem 7_3[CTCI] &#8211; Patrick Yu</title>
 
-<meta name="keywords" content="Music">
+<meta name="keywords" content="coding, ctci">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Disclosure & Sam Smith - Hotline Bling Cover">
+<meta name="twitter:title" content="Problem 7_3[CTCI]">
 
 <meta name="twitter:site" content="@PatrickYu5">
 <meta name="twitter:creator" content="@PatrickYu5">
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Disclosure & Sam Smith - Hotline Bling Cover">
+<meta property="og:title" content="Problem 7_3[CTCI]">
 
-<meta property="og:url" content="/music/disclosure-and-sam-smith-hotline-bling-cover/">
+<meta property="og:url" content="/ctci/problem-7_3-ctci/">
 <meta property="og:site_name" content="Patrick Yu">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="/music/disclosure-and-sam-smith-hotline-bling-cover/">
+<link rel="canonical" href="/ctci/problem-7_3-ctci/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -167,29 +167,68 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/music/disclosure-and-sam-smith-hotline-bling-cover/" rel="bookmark" title="Disclosure & Sam Smith - Hotline Bling Cover">Disclosure & Sam Smith - Hotline Bling Cover</a></h1>
+        <h1><a href="/ctci/problem-7_3-ctci/" rel="bookmark" title="Problem 7_3[CTCI]">Problem 7_3[CTCI]</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/224157146&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_3">Github Source</a></p>
 
+<h3>Q:</h3>
+
+<p>Given two lines on a Cartesian plane, determine whether the two lines would intersect.</p>
+
+<h3>A:</h3>
+
+<p>Mathematically, two lines, by the true definition of a line, would always intersect unless their slopes were the same and their y-intercept were different.</p>
+
+<p>The solution provided by the book involves creating a line class.  It seems to be just an example question to show how to ask questions.</p>
+
+<p>I&#39;ll replicate the line class here.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Line</span>
+<span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">double</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.000001</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="n">slope</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="n">doulbe</span> <span class="n">yintercept</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Line</span><span class="o">(</span><span class="kt">double</span> <span class="n">s</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">slope</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+        <span class="n">yintercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&gt;</span><span class="n">epsilon</span> <span class="o">||</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">intercept</span><span class="o">)&lt;</span><span class="n">epsilon</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Personally, my intercept method would look a little different.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect2</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&lt;</span><span class="n">epsilon</span> <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">yintercept</span><span class="o">)</span> <span class="o">&gt;</span><span class="n">epsilon</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=/music/disclosure-and-sam-smith-hotline-bling-cover/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/problem-7_3-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/music/disclosure-and-sam-smith-hotline-bling-cover/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/problem-7_3-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/music/disclosure-and-sam-smith-hotline-bling-cover/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=/ctci/problem-7_3-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Disclosure & Sam Smith - Hotline Bling Cover</strong> was published on <time datetime="2015-09-16T15:45:20-07:00">September 16, 2015</time>.</p>
+        <p class="byline"><strong>Problem 7_3[CTCI]</strong> was published on <time datetime="2015-09-23T22:50:03-07:00">September 23, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   

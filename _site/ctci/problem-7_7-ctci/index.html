@@ -1,0 +1,335 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 7_7[CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="coding, ctci">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 7_7[CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 7_7[CTCI]">
+
+<meta property="og:url" content="/ctci/problem-7_7-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/problem-7_7-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/ctci/craking-the-coding-interview" >Cracking the Coding Interview</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/problem-7_7-ctci/" rel="bookmark" title="Problem 7_7[CTCI]">Problem 7_7[CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_7">Github Source</a></p>
+
+<h3>Q:</h3>
+
+<p>Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7.</p>
+
+<h3>A:</h3>
+
+<p>This is a pretty difficult problem, especially if you&#39;re going for the optimal solution.</p>
+
+<h4>Solution 1</h4>
+
+<p>Brute force.  We can multiply each number in a list of k-1 numbers by 3, 5, and 7 until we find the smallest number that is not already in the k-1 list.</p>
+
+<h4>Solution 2</h4>
+
+<p>Each time we add a number to our list, we keep in mind 3, 5, and 7 multiplied by that number into a temporary list.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">getKthMagicNumber</span><span class="o">{</span>
+    <span class="c1">//This helper method will remove and return the smallest value of the queue.</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">removeMin</span><span class="o">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">v</span> <span class="o">:</span><span class="n">q</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="n">min</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">q</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">min</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="n">q</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">min</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">min</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addProducts</span><span class="o">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span> <span class="n">q</span><span class="o">,</span> <span class="kt">int</span> <span class="n">v</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">3</span><span class="o">);</span>
+        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">5</span><span class="o">);</span>
+        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">7</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getKthMagicNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">addProducts</span><span class="o">(</span><span class="n">q</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+        <span class="o">{</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">removeMin</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+            <span class="n">addProducts</span><span class="o">(</span><span class="n">q</span><span class="o">,</span><span class="n">val</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">val</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h4>Solution 3</h4>
+
+<p>This is the most optimal.  It involves three queues which took the numbers previously used multiplied by 3,5, and 7 respectively and not using duplicates.  We do this till we get our k numbers.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">getKthMagicNumberFaster</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getKthMagicNumberFaster</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="c1">// Three queues for each set of multiples</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="c1">// Start with 3^0 * 5^0 * 7^0</span>
+        <span class="n">queue3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+
+        <span class="c1">//Iterate through to find</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+        <span class="o">{</span>
+            <span class="c1">//Each queue&#39;s respective min</span>
+            <span class="kt">int</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">q3</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q3</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">v5</span> <span class="o">=</span> <span class="n">q5</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q5</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">v7</span> <span class="o">=</span> <span class="n">q7</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q7</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+
+            <span class="c1">//Overall min</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">v3</span><span class="o">,</span><span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">v5</span><span class="o">,</span><span class="n">v7</span><span class="o">));</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v3</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">q3</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+                <span class="n">q3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+                <span class="n">q5</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v5</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">q5</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+                <span class="n">q5</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v7</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">q7</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">val</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/problem-7_7-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/problem-7_7-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/problem-7_7-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 7_7[CTCI]</strong> was published on <time datetime="2015-09-23T22:56:05-07:00">September 23, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/craking-the-coding-interview/" title="Cracking the Coding Interview">Cracking the Coding Interview</a></li>
+    
+      <li><a href="/ctci/problem-7_6-ctci/" title="Problem 7_6[CTCI]">Problem 7_6[CTCI]</a></li>
+    
+      <li><a href="/ctci/problem-7_5-ctci/" title="Problem 7_5[CTCI]">Problem 7_5[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
