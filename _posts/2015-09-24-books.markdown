@@ -13,4 +13,4 @@ date: 2015-09-24T13:33:14-07:00
 Here's some books I'm currently reading and working with.
 
 - [Cracking the Coding Interivew By Gayle Laakmann McDowell](/ctci/cracking-the-coding-interview/)
-- [Accelerated C++ by Andrew Koenig and Barbara E. Moo](/AcceleratedC++/Intro-Accc)
+- [Accelerated C++ by Andrew Koenig and Barbara E. Moo](/acceleratedc++/intro-accc/)
