@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Problem 0_4"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:10:46-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_4)
+
+###Q:
+Write a program that, when run, writes the Hello, world! program as its output.
+
+###A:
+```c++
+#include <iostream>
+
+int main(){
+	std::cout<<"// a small C++ program \n#include <iostream> \nint main() \n{ \nstd::cout << \"Hello, world!\" << std::endl; \nreturn 0; \n}"<<std::endl;
+}
+```

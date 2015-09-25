@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Problem 0_3"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:07:57-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_3)
+
+###Q:
+The string literal "\t" represents a tab character; different C++ implementations display tabs in different ways. Experiment with your implementation to learn how it treats tabs.
+
+###A:
+```c++
+#include <iostream>
+
+int main(){
+	std::cout<<"\t let\'s see how \t tabs work \t \t \t end"<<std::endl;
+}
+```

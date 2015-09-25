@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Problem 0_5"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:10:52-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_5)
+
+###Q:
+Is this a valid program? Why or why not?
+
+```c++
+#include <iostream>
+int main() std::cout << "Hello, world!" << std::endl;
+```
+
+We need curly brackets around the main funciton, so it is not valid.

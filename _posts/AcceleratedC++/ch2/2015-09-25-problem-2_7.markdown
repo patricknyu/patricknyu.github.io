@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Problem 2_7"
+modified:
+categories: /AcceleratedC++/ch2
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:40:22-07:00
+---
+
+###Q:
+Write a program to count down from 10 to -5 .
+
+###A:
+
+```c++
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main()
+{
+	for(int i = 10;i >= -5;--i)
+	{
+		cout<< i<<endl;
+	}
+}
+```

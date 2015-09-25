@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Problem 0_7"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:11:11-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_7)
+
+###Q:
+What about this one?
+
+```c++
+#include <iostream>
+int main() {
+/* This is a comment that extends over several lines
+because it uses /* and */ as its starting and ending delimiters */
+std::cout << "Does this work?" << std::endl;
+return 0;
+}
+```
+###A:
+
+No, we have a problem since the /* starts the comment and it gets ended by the first */.  This means that the extra " and */ as its starting and ending delimiters */" will not be interpreted as a comment, giving an error.

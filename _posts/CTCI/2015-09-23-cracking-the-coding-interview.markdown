@@ -16,7 +16,7 @@ I'm still a bit new at how Jekyll works, so here is where I will link to some st
 
 I started posting at Chapter 7, maybe I'll go back and post the first 6 chapters later.
 
-- [Chapter 7 Intro](/ctci/chapter-7/), [Github](https://github.com/patricknyu/CtCInterview/blob/master/readme.md)
+- [Chapter 7 Intro](/ctci/chapter-7/), [Github](https://github.com/patricknyu/CtCInterview/blob/master/ch_7/readme.md)
 - [Problem 7_1](/ctci/problem-7_1-ctci/), [Github](https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_1)
 - [Problem 7_2](/ctci/problem-7_2-ctci/), [Github](https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_2)
 - [Problem 7_3](/ctci/problem-7_3-ctci/), [Github](https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_3)

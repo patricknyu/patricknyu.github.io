@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Problem 2_8"
+modified:
+categories: /AcceleratedC++/ch2
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:40:26-07:00
+---
+
+###Q:
+Write a program to generate the product of the numbers in the range [1, 10).
+
+###A:
+
+```c++
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+int main()
+{
+	cout<<"This is the product of the numbers in the range [1,10)"<<endl;
+	int prod = 1;
+	for (int i = 1;i<10;++i)
+	{
+		prod  = prod*i;
+	}
+	cout << prod << endl;
+}
+```

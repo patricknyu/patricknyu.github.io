@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Problem 1_3"
+modified:
+categories: /AcceleratedC++/ch1
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:18:15-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch1/Question1_3)
+
+###Q:
+Is the following program valid? If so, what does it do? If not, why not?
+
+```c++
+#include <iostream>
+#include <string>
+
+int main()
+{
+	{ const std::string s = "a string"; std::cout << s << std::endl; }
+	{ const std::string s = "another string"; std::cout << s << std::endl; }
+	return 0;
+}
+```
+###A:
+This is valid.  We can use the same const strings s when we keep them inside the curly brackets since it deletes it from memory once the curly brackets end.

@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Problem 0_2"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:06:20-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_2)
+###Q:
+Write a program that, when run, writes
+
+	```This (") is a quote, and this (\) is a backslash.```
+
+###A:
+```c++
+#include <iostream>
+
+int main(){
+	std::cout << "This (\") is a quote, and this (\\) is a backslash" << std::endl;
+}
+```

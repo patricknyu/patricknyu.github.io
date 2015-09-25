@@ -1,0 +1,300 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 2_2 &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 2_2">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 2_2">
+
+<meta property="og:url" content="/acceleratedc++/ch2/problem-2_2/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/acceleratedc++/ch2/problem-2_2/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/acceleratedc++/ch2/problem-2_2/" rel="bookmark" title="Problem 2_2">Problem 2_2</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3>Q:</h3>
+
+<p>Change the framing program so that it uses a different amount of space to separate the sides from the greeting than it uses to separate the top and bottom borders from the greeting.</p>
+
+<p>I accidentally solved 2-3 as well with my solution here.</p>
+
+<h3>A:</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;string&gt;</span>
+
+<span class="c1">// say what standard-library names we use</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ask for the person&#39;s name</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please enter your first name: &quot;</span><span class="p">;</span>
+
+    <span class="c1">// read the name</span>
+    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="c1">// build the message that we intend to write</span>
+    <span class="k">const</span> <span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="p">;</span>
+
+    <span class="c1">// the number of blanks surrounding the greeting const</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me how much padding you want above and below the greeting:&quot;</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">rowpad</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">rowpad</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me how much padding you want to the left and right of the greeting:&quot;</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">colpad</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">colpad</span><span class="p">;</span>
+
+    <span class="c1">// the number of rows and columns to write</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">rowpad</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="n">colpad</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="c1">// write a blank line to separate the output from the input</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// write rows rows of output</span>
+    <span class="c1">// invariant: we have written r rows so far</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">rows</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="c1">// invariant: we have written c characters so far in the current row</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="n">cols</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// is it time to write the greeting?</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">rowpad</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">==</span> <span class="n">colpad</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">greeting</span><span class="p">;</span>
+                <span class="n">c</span> <span class="o">+=</span> <span class="n">greeting</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// are we on the border?</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">r</span> <span class="o">==</span> <span class="n">rows</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">||</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*&quot;</span><span class="p">;</span> <span class="k">else</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/acceleratedc++/ch2/problem-2_2/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/acceleratedc++/ch2/problem-2_2/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/acceleratedc++/ch2/problem-2_2/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 2_2</strong> was published on <time datetime="2015-09-25T00:37:27-07:00">September 25, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/acceleratedc++/ch2/intro-ch2-acc/" title="Intro Ch2[ACC++]">Intro Ch2[ACC++]</a></li>
+    
+      <li><a href="/acceleratedc++/ch2/problem-2_10/" title="Problem 2_10">Problem 2_10</a></li>
+    
+      <li><a href="/acceleratedc++/ch2/problem-2_9/" title="Problem 2_9">Problem 2_9</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

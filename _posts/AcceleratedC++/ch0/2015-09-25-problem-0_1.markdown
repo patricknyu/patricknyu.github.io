@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Problem 0_1"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:04:52-07:00
+---
+
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_1)
+###Q:
+What does the following statement do?
+
+	3+4;
+
+###A:
+
+This would give us an interger 7.
+
+However, in it's current format, there will be no return since we did not do the standard output thing.

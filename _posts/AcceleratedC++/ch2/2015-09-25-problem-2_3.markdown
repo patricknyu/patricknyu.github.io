@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Problem 2_3"
+modified:
+categories: /AcceleratedC++/ch2
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:40:04-07:00
+---
+###Q:
+Rewrite the framing program to ask the user to supply the amount of spacing to leave between the frame and the greeting.
+
+###A:
+I accidentally did this for 2-2.  [Here](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch2/Question2_2) is where it.

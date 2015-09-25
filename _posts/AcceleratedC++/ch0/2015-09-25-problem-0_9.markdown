@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Problem 0_9"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:11:20-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_9)
+
+###Q:
+What is the shortest valid program?
+
+###A:
+```c++
+int main(){}
+```
+
+This is the shortest.  There are no include statements, it fits the requirement of having a main funciton. 

@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Problem 0_10"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:11:25-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_10)
+
+###Q:
+Rewrite the Hello, world! program so that a newline occurs everywhere that whitespace is allowed in the program.
+
+###A:
+```c++
+#include <iostream>
+
+int main(){
+	std::cout<<"Hello,\nWorld"<<std::endl;
+}
+```

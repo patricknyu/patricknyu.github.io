@@ -1,7 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/ctci/craking-the-coding-interview/</loc>
+    <loc>/acceleratedc++/ch2/intro-ch2-acc/</loc>
+    <lastmod>2015-09-25T00:41:03-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_10/</loc>
+    <lastmod>2015-09-25T00:40:35-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_9/</loc>
+    <lastmod>2015-09-25T00:40:31-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_8/</loc>
+    <lastmod>2015-09-25T00:40:26-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_7/</loc>
+    <lastmod>2015-09-25T00:40:22-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_6/</loc>
+    <lastmod>2015-09-25T00:40:18-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_5/</loc>
+    <lastmod>2015-09-25T00:40:13-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_4/</loc>
+    <lastmod>2015-09-25T00:40:09-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_3/</loc>
+    <lastmod>2015-09-25T00:40:04-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_2/</loc>
+    <lastmod>2015-09-25T00:37:27-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_1/</loc>
+    <lastmod>2015-09-25T00:37:22-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch2/problem-2_0/</loc>
+    <lastmod>2015-09-25T00:37:18-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/intro-ch1-acc/</loc>
+    <lastmod>2015-09-25T00:35:34-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/intro-ch0-acc/</loc>
+    <lastmod>2015-09-25T00:31:50-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_0/</loc>
+    <lastmod>2015-09-25T00:19:07-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_6/</loc>
+    <lastmod>2015-09-25T00:18:28-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_5/</loc>
+    <lastmod>2015-09-25T00:18:23-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_4/</loc>
+    <lastmod>2015-09-25T00:18:19-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_3/</loc>
+    <lastmod>2015-09-25T00:18:15-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_2/</loc>
+    <lastmod>2015-09-25T00:18:06-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_10/</loc>
+    <lastmod>2015-09-25T00:11:25-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_9/</loc>
+    <lastmod>2015-09-25T00:11:20-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_8/</loc>
+    <lastmod>2015-09-25T00:11:16-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_7/</loc>
+    <lastmod>2015-09-25T00:11:11-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_6/</loc>
+    <lastmod>2015-09-25T00:11:01-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_5/</loc>
+    <lastmod>2015-09-25T00:10:52-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_4/</loc>
+    <lastmod>2015-09-25T00:10:46-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_3/</loc>
+    <lastmod>2015-09-25T00:07:57-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_2/</loc>
+    <lastmod>2015-09-25T00:06:20-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_1/</loc>
+    <lastmod>2015-09-25T00:04:52-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch0/problem-0_0/</loc>
+    <lastmod>2015-09-25T00:02:58-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/ch1/problem-1_1/</loc>
+    <lastmod>2015-09-24T14:02:31-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/acceleratedc++/intro-accc/</loc>
+    <lastmod>2015-09-24T13:35:32-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/books/</loc>
+    <lastmod>2015-09-24T13:33:14-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/ctci/cracking-the-coding-interview/</loc>
     <lastmod>2015-09-23T23:14:08-07:00</lastmod>
   </url>
   <url>
@@ -58,19 +194,19 @@
   </url>
   <url>
     <loc>/CrackingtheCodingInterview.html</loc>
-    <lastmod>2015-09-23T23:21:48-07:00</lastmod>
+    <lastmod>2015-09-25T00:53:48-07:00</lastmod>
   </url>
   <url>
     <loc>/posts/</loc>
-    <lastmod>2015-09-23T23:21:48-07:00</lastmod>
+    <lastmod>2015-09-25T00:53:48-07:00</lastmod>
   </url>
   <url>
     <loc>/</loc>
-    <lastmod>2015-09-23T23:21:48-07:00</lastmod>
+    <lastmod>2015-09-25T00:53:48-07:00</lastmod>
   </url>
   <url>
     <loc>/about/</loc>
-    <lastmod>2015-09-23T23:21:48-07:00</lastmod>
+    <lastmod>2015-09-25T00:53:48-07:00</lastmod>
   </url>
   <url>
     <loc>/old/classes.html</loc>

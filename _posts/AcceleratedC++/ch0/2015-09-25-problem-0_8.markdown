@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Problem 0_8"
+modified:
+categories: /AcceleratedC++/ch0
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-25T00:11:16-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_8)
+
+###Q:
+...and this one?
+
+```c++
+#include <iostream> int main()
+{
+// This is a comment that extends over several lines
+// by using // at the beginning of each line instead of using /* // or */ to delimit comments.
+std::cout << "Does this work?" << std::endl;
+return 0; 
+}
+```
+
+###A:
+This is valid.  All the stuff for the entire line after each // starts is a comment, so none if it is interpreted.
+
+The rest of the program is valid.

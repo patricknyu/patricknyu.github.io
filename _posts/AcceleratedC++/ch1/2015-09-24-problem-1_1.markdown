@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Problem 1_1"
+modified:
+categories: /AcceleratedC++/ch1
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-09-24T14:02:31-07:00
+---
+[Github Source](https://github.com/patricknyu/AcceleratedCPlusPlus/tree/
+master/ch1/Question1_1)
+
+###Q:
+Are the following definitions valid? Why or why not?
+
+	const std::string hello = "Hello";
+	const std::string message = hello + ", world" + "!";
+
+These are valid.  The first line is a standard string defenition as a constant.  The second is another string defenition.  It's a bit confusing since hello is not in paranthesis, but hello is actually a variable we chose in the first line. Also, the second part is one whole string.  The fact that they are constants are also fine since the second definition makes a copy of the first string.
