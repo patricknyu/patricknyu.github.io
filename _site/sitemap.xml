@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/ctci/ch8/problem-8_1-ctci/</loc>
+    <lastmod>2015-09-27T15:45:40-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/ctci/ch8/problem-8_2-ctci/</loc>
+    <lastmod>2015-09-27T15:39:32-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/ctci/ch8/chapter-8-ctci/</loc>
+    <lastmod>2015-09-25T16:18:16-07:00</lastmod>
+  </url>
+  <url>
     <loc>/acceleratedc++/ch2/intro-ch2-acc/</loc>
     <lastmod>2015-09-25T00:41:03-07:00</lastmod>
   </url>
@@ -194,19 +206,19 @@
   </url>
   <url>
     <loc>/CrackingtheCodingInterview.html</loc>
-    <lastmod>2015-09-25T10:41:39-07:00</lastmod>
+    <lastmod>2015-09-27T15:46:54-07:00</lastmod>
   </url>
   <url>
     <loc>/posts/</loc>
-    <lastmod>2015-09-25T10:41:39-07:00</lastmod>
+    <lastmod>2015-09-27T15:46:54-07:00</lastmod>
   </url>
   <url>
     <loc>/</loc>
-    <lastmod>2015-09-25T10:41:39-07:00</lastmod>
+    <lastmod>2015-09-27T15:46:54-07:00</lastmod>
   </url>
   <url>
     <loc>/about/</loc>
-    <lastmod>2015-09-25T10:41:39-07:00</lastmod>
+    <lastmod>2015-09-27T15:46:54-07:00</lastmod>
   </url>
   <url>
     <loc>/old/classes.html</loc>

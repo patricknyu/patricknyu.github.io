@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Problem 7_3[CTCI] &#8211; Patrick Yu</title>
+<title>Chapter 8[CTCI] &#8211; Patrick Yu</title>
 
-<meta name="keywords" content="coding, ctci">
+<meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Problem 7_3[CTCI]">
+<meta name="twitter:title" content="Chapter 8[CTCI]">
 
 <meta name="twitter:site" content="@PatrickYu5">
 <meta name="twitter:creator" content="@PatrickYu5">
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Problem 7_3[CTCI]">
+<meta property="og:title" content="Chapter 8[CTCI]">
 
-<meta property="og:url" content="/ctci/problem-7_3-ctci/">
+<meta property="og:url" content="/ctci/ch8/chapter-8-ctci/">
 <meta property="og:site_name" content="Patrick Yu">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="/ctci/problem-7_3-ctci/">
+<link rel="canonical" href="/ctci/ch8/chapter-8-ctci/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -167,68 +167,143 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/ctci/problem-7_3-ctci/" rel="bookmark" title="Problem 7_3[CTCI]">Problem 7_3[CTCI]</a></h1>
+        <h1><a href="/ctci/ch8/chapter-8-ctci/" rel="bookmark" title="Chapter 8[CTCI]">Chapter 8[CTCI]</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_3">Github Source</a></p>
+      <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/readme.md">Github Source</a></p>
 
-<h3>Q:</h3>
+<h2>Object-Orientated Design</h2>
 
-<p>Given two lines on a Cartesian plane, determine whether the two lines would intersect.</p>
+<h4>Steps to Solve</h4>
 
-<h3>A:</h3>
+<ol>
+<li><p>Handle Ambiguity</p>
 
-<p>Mathematically, two lines, by the true definition of a line, would always intersect unless their slopes were the same and their y-intercept were different.</p>
+<ul>
+<li>OOD questions are intentionally very vague.  It&#39;s importatnt to ask questions and not make assumptions.</li>
+<li>We have to ask who, what when, where, why, and how</li>
+</ul></li>
+<li><p>Define the Core Objects</p>
 
-<p>The solution provided by the book involves creating a line class.  It seems to be just an example question to show how to ask questions.</p>
+<ul>
+<li>We need to know know what the core objects are.</li>
+<li>My favorite example in OOD is the restaurant example.  Core objects in this example could be Employee, Food, Customer.</li>
+</ul></li>
+<li><p>Analyze Relationships</p>
 
-<p>I&#39;ll replicate the line class here.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Line</span>
+<ul>
+<li>We need to notice which objects are members of other objects.  Do we have inheritance properties?</li>
+<li>Do we have many to many or one to many relationship.</li>
+</ul></li>
+</ol>
+
+<p>Example 1: An example of a one to many relationship is a when we are describing families.  A Mother may have many biological children, however a child can only have one biological mother.</p>
+
+<p>Example 2: An example of a many to many relationship is when we describe books.  A book can be written by many authors as a joint effort.  In a similar light, a author can write many books.</p>
+
+<ol>
+<li>Investigate Actions
+
+<ul>
+<li>Consider the actions that the objects can take.  You need to double check your program here and ensure you didn&#39;t miss anything.</li>
+</ul></li>
+</ol>
+
+<h4>Singleton Class</h4>
+
+<ul>
+<li>This ensures that a class has only one instance and ensures access to the instance through the application.</li>
+<li>It is useful in cases where you have a global object with only one instance.</li>
+<li>The example below implements the Restaurant class so that there is only one instance of Restaurant allowed.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Restaurant</span>
 <span class="o">{</span>
-    <span class="kd">static</span> <span class="kt">double</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.000001</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="n">slope</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">doulbe</span> <span class="n">yintercept</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">Line</span><span class="o">(</span><span class="kt">double</span> <span class="n">s</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">restaurant</span> <span class="n">_instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nf">Restaurant</span><span class="o">()</span>
     <span class="o">{</span>
-        <span class="n">slope</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-        <span class="n">yintercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
     <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Restaurant</span> <span class="nf">getInstance</span><span class="o">()</span>
     <span class="o">{</span>
-        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&gt;</span><span class="n">epsilon</span> <span class="o">||</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">intercept</span><span class="o">)&lt;</span><span class="n">epsilon</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Restaurant</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">_instance</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
-<p>Personally, my intercept method would look a little different.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect2</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
+<h4>Factory Method</h4>
+
+<ul>
+<li>Offers an interface for creating an instance of a class.</li>
+<li>The sublcasses decide which class to instantiate.</li>
+<li>You can do this with the creator class being abstract, or you could have the creator class be a concrete class that provides an implementation.</li>
+<li>The below example takes a paramter which represents which class we want to instantiate.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardGame</span>
 <span class="o">{</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&lt;</span><span class="n">epsilon</span> <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">yintercept</span><span class="o">)</span> <span class="o">&gt;</span><span class="n">epsilon</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">CardGame</span> <span class="nf">createCardGame</span><span class="o">(</span><span class="n">GameType</span> <span class="n">type</span><span class="o">)</span>
     <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">type</span><span class="o">==</span><span class="n">GameType</span><span class="o">.</span><span class="na">Poker</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">PokerGame</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">type</span> <span class="o">==</span> <span class="n">GameType</span><span class="o">.</span><span class="na">BlackJack</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">BlackJackGame</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 <span class="o">}</span>
 </code></pre></div>
+<h4>4 Pillars of OOD</h4>
+
+<ol>
+<li><p>Abstraction</p>
+
+<ul>
+<li>The basic idea behind abstraction is to hide the complexities of your program.  Someone using your design doesn&#39;t necessarily need to know all the nitty gritty details behind it.</li>
+<li>Example : If you have a car, you know that you need keys, how to press the gas pedal, and how to steer.  However, you probably don&#39;t need to know how the engine works with the cylinders and the gear change.</li>
+</ul></li>
+<li><p>Encapsulation</p>
+
+<ul>
+<li>The idea for this is security.  You can make some of the variables in your design private, allowing to keep some data safe.</li>
+<li>An example of this is a backpack.  You put your school stuff inside of it and nobody can access it other than you.</li>
+</ul></li>
+<li><p>Polymorphism</p>
+
+<ul>
+<li>This is the ability for an object to take many forms.</li>
+<li>Method overloading goes here.</li>
+<li>This means that we can have objects with the same name that are different since they have different parameters.</li>
+</ul></li>
+<li><p>Inheritance</p>
+
+<ul>
+<li>This is the ability for an object to inherity the qualities of another object.</li>
+<li>Example : We have a cat object which has properties <code>has_claws = true;</code> and <code>legs = 4;</code>.  Lion can inherit cat at keep those properties.  Panther can also inherit cat and keep those qualities too.</li>
+</ul></li>
+</ol>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=/ctci/problem-7_3-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/chapter-8-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/problem-7_3-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/chapter-8-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/ctci/problem-7_3-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/chapter-8-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Problem 7_3[CTCI]</strong> was published on <time datetime="2015-09-23T22:50:03-07:00">September 23, 2015</time>.</p>
+        <p class="byline"><strong>Chapter 8[CTCI]</strong> was published on <time datetime="2015-09-25T16:18:16-07:00">September 25, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -245,7 +320,7 @@
     
       <li><a href="/ctci/ch8/problem-8_2-ctci/" title="Problem 8_2[CTCI]">Problem 8_2[CTCI]</a></li>
     
-      <li><a href="/ctci/ch8/chapter-8-ctci/" title="Chapter 8[CTCI]">Chapter 8[CTCI]</a></li>
+      <li><a href="/acceleratedc++/ch2/intro-ch2-acc/" title="Intro Ch2[ACC++]">Intro Ch2[ACC++]</a></li>
     
     </ul>
     <hr />

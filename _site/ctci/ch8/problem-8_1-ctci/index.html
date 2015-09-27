@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Problem 7_3[CTCI] &#8211; Patrick Yu</title>
+<title>Problem 8_1[CTCI] &#8211; Patrick Yu</title>
 
-<meta name="keywords" content="coding, ctci">
+<meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Problem 7_3[CTCI]">
+<meta name="twitter:title" content="Problem 8_1[CTCI]">
 
 <meta name="twitter:site" content="@PatrickYu5">
 <meta name="twitter:creator" content="@PatrickYu5">
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Problem 7_3[CTCI]">
+<meta property="og:title" content="Problem 8_1[CTCI]">
 
-<meta property="og:url" content="/ctci/problem-7_3-ctci/">
+<meta property="og:url" content="/ctci/ch8/problem-8_1-ctci/">
 <meta property="og:site_name" content="Patrick Yu">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="/ctci/problem-7_3-ctci/">
+<link rel="canonical" href="/ctci/ch8/problem-8_1-ctci/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -167,68 +167,43 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/ctci/problem-7_3-ctci/" rel="bookmark" title="Problem 7_3[CTCI]">Problem 7_3[CTCI]</a></h1>
+        <h1><a href="/ctci/ch8/problem-8_1-ctci/" rel="bookmark" title="Problem 8_1[CTCI]">Problem 8_1[CTCI]</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_3">Github Source</a></p>
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_1">Github Source</a></p>
 
-<h3>Q:</h3>
+<h2>Q:</h2>
 
-<p>Given two lines on a Cartesian plane, determine whether the two lines would intersect.</p>
+<p>Design the data structures for a generic deck of cards.  Explain how you would subclass the data structures to implement blackjack.</p>
 
-<h3>A:</h3>
+<h2>A:</h2>
 
-<p>Mathematically, two lines, by the true definition of a line, would always intersect unless their slopes were the same and their y-intercept were different.</p>
+<p>Technically, generic could be any deck of cards, but let&#39;s assume the interviewer specifies the deck as a deck of playing cards.</p>
 
-<p>The solution provided by the book involves creating a line class.  It seems to be just an example question to show how to ask questions.</p>
+<p>Assuming no jokers, I would design it using a class for Cards which take in properties such as number and suit.  I would also have a class for the entire deck which contained a stack of 52 cards which ensured we had no duplicate cards somehow.</p>
 
-<p>I&#39;ll replicate the line class here.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Line</span>
-<span class="o">{</span>
-    <span class="kd">static</span> <span class="kt">double</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.000001</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="n">slope</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">doulbe</span> <span class="n">yintercept</span><span class="o">;</span>
+<p>The books solution, cleverly, uses a enum for the Card class and a ArrayList to represent the cards in the Deck along with a generic class.  They also have a shuffle method.</p>
 
-    <span class="kd">public</span> <span class="nf">Line</span><span class="o">(</span><span class="kt">double</span> <span class="n">s</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">slope</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-        <span class="n">yintercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>I&#39;m not going to recreate all the code since my code would mimic the solution nearly identically.</p>
 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&gt;</span><span class="n">epsilon</span> <span class="o">||</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">intercept</span><span class="o">)&lt;</span><span class="n">epsilon</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
-<p>Personally, my intercept method would look a little different.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect2</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&lt;</span><span class="n">epsilon</span> <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">yintercept</span><span class="o">)</span> <span class="o">&gt;</span><span class="n">epsilon</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div>
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=/ctci/problem-7_3-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/problem-8_1-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/problem-7_3-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/problem-8_1-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/ctci/problem-7_3-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/problem-8_1-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Problem 7_3[CTCI]</strong> was published on <time datetime="2015-09-23T22:50:03-07:00">September 23, 2015</time>.</p>
+        <p class="byline"><strong>Problem 8_1[CTCI]</strong> was published on <time datetime="2015-09-27T15:45:40-07:00">September 27, 2015</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -241,11 +216,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="/ctci/ch8/problem-8_1-ctci/" title="Problem 8_1[CTCI]">Problem 8_1[CTCI]</a></li>
-    
       <li><a href="/ctci/ch8/problem-8_2-ctci/" title="Problem 8_2[CTCI]">Problem 8_2[CTCI]</a></li>
     
       <li><a href="/ctci/ch8/chapter-8-ctci/" title="Chapter 8[CTCI]">Chapter 8[CTCI]</a></li>
+    
+      <li><a href="/acceleratedc++/ch2/intro-ch2-acc/" title="Intro Ch2[ACC++]">Intro Ch2[ACC++]</a></li>
     
     </ul>
     <hr />
