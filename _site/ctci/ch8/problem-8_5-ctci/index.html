@@ -1,0 +1,397 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 8_5[CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 8_5[CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 8_5[CTCI]">
+
+<meta property="og:url" content="/ctci/ch8/problem-8_5-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/ch8/problem-8_5-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/ch8/problem-8_5-ctci/" rel="bookmark" title="Problem 8_5[CTCI]">Problem 8_5[CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_5">Github Source</a></p>
+
+<h3>Q:</h3>
+
+<p>Design the data structures for an online book system.</p>
+
+<h3>A:</h3>
+
+<p>This is a pretty vague description of a book system.  With all other OOD questions, we must ensure we ask enough questions to properly understand what we are asked to accomplish.</p>
+
+<p>I&#39;m going to assume this is a reader system which similar to a kindle, but is on a computer.</p>
+
+<p>I&#39;m going to create a Book, Kindle, and Library class.</p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Book.java">Book.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">Author</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">Title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">text</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">String</span> <span class="n">a</span><span class="o">,</span> <span class="n">String</span> <span class="n">ti</span><span class="o">,</span> <span class="n">String</span> <span class="n">te</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="n">Author</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+        <span class="n">Title</span> <span class="o">=</span> <span class="n">ti</span><span class="o">;</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">te</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getID</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setID</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAuthor</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Author</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAuthor</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">Author</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Title</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">ti</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">Title</span> <span class="o">=</span> <span class="n">ti</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getText</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">text</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setText</span><span class="o">(</span><span class="n">String</span> <span class="n">te</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">te</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Library.java">Library.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Hashtable</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Library</span>
+<span class="o">{</span>
+    <span class="c1">//Where we hold the books, book id will be the integer</span>
+    <span class="kd">private</span> <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Book</span><span class="o">&gt;</span> <span class="n">lib</span><span class="o">;</span>
+
+    <span class="c1">//Adding books to our library</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
+        <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We already have this book&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">lib</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">(),</span><span class="n">b</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//Getting rid of books from our library</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
+        <span class="o">{</span>
+            <span class="n">lib</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book.&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//Grabbing books from our library.</span>
+    <span class="kd">public</span> <span class="n">Book</span> <span class="nf">get</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(!</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
+        <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book.&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">containsBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Kindle.java">Kindle.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Kindle</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">storage</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Library</span> <span class="n">lib</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Book</span> <span class="n">currentBook</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Kindle</span><span class="o">(</span><span class="n">String</span> <span class="n">u</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="n">Library</span> <span class="n">l</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">storage</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">u</span><span class="o">;</span>
+        <span class="n">lib</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStorageSize</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">storage</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUser</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">username</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Book</span> <span class="nf">getCurrentBook</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">currentBook</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">readBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">currentBook</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;You&#39;re already reading something else!  Finish that first!&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(!</span><span class="n">lib</span><span class="o">.</span><span class="na">containsBook</span><span class="o">(</span><span class="n">b</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book to read&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">currentBook</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">//There is probably a better way to implement this part.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stopReading</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">currentBook</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/problem-8_5-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/problem-8_5-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/problem-8_5-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 8_5[CTCI]</strong> was published on <time datetime="2015-09-29T15:58:43-07:00">September 29, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/ch8/problem-8_4-ctci/" title="Problem 8_4[CTCI]">Problem 8_4[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_3-ctci/" title="Problem 8_3[CTCI]">Problem 8_3[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_1-ctci/" title="Problem 8_1[CTCI]">Problem 8_1[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
