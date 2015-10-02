@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>/ctci/ch8/problem-8_6-ctci/</loc>
+    <lastmod>2015-10-01T20:00:47-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/music/kid-cudi-cudderisback/</loc>
+    <lastmod>2015-09-30T16:13:00-07:00</lastmod>
+  </url>
+  <url>
     <loc>/ctci/ch8/problem-8_5-ctci/</loc>
     <lastmod>2015-09-29T15:58:43-07:00</lastmod>
   </url>
@@ -218,19 +226,23 @@
   </url>
   <url>
     <loc>/CrackingtheCodingInterview.html</loc>
-    <lastmod>2015-09-29T16:05:02-07:00</lastmod>
+    <lastmod>2015-10-01T20:03:13-07:00</lastmod>
+  </url>
+  <url>
+    <loc>/AllPosts/</loc>
+    <lastmod>2015-10-01T20:03:13-07:00</lastmod>
   </url>
   <url>
     <loc>/posts/</loc>
-    <lastmod>2015-09-29T16:05:02-07:00</lastmod>
+    <lastmod>2015-10-01T20:03:13-07:00</lastmod>
   </url>
   <url>
     <loc>/</loc>
-    <lastmod>2015-09-29T16:05:02-07:00</lastmod>
+    <lastmod>2015-10-01T20:03:13-07:00</lastmod>
   </url>
   <url>
     <loc>/about/</loc>
-    <lastmod>2015-09-29T16:05:02-07:00</lastmod>
+    <lastmod>2015-10-01T20:03:13-07:00</lastmod>
   </url>
   <url>
     <loc>/old/classes.html</loc>

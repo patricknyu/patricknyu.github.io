@@ -1,0 +1,380 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 8_6[CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 8_6[CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 8_6[CTCI]">
+
+<meta property="og:url" content="/ctci/ch8/problem-8_6-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/ch8/problem-8_6-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/ch8/problem-8_6-ctci/" rel="bookmark" title="Problem 8_6[CTCI]">Problem 8_6[CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_6">Github Source</a></p>
+
+<h3>Q:</h3>
+
+<p>Implement a jigsaw puzzle.  Design the data structures and explain an algorithm to solve the puzzle.  You can assume that you have a fitsWith method which, when passed two puzzle pieces, returns true if the two pieces belong together.</p>
+
+<h3>A:</h3>
+
+<p>This is a difficult problem.  My general idea was to use a boolean n dimensional array to represent the board.  My implementation was simplistic, so I will use theirs.</p>
+
+<p>They use the idea of absolute position along with relative position.  Absolute position refers to when we know exactly where our piece goes.  Relative positions is ues to know it is next to another piece.</p>
+
+<p>This is a really tough problem.  I&#39;ll replicate most of the code.</p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_6/Edge.java">Edge.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Edge</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Type</span>
+    <span class="o">{</span>
+        <span class="n">inner</span><span class="o">,</span> <span class="n">outer</span><span class="o">,</span> <span class="n">flat</span>
+    <span class="o">}</span>
+    <span class="n">Piece</span> <span class="n">parent</span><span class="o">;</span>
+    <span class="n">Type</span> <span class="n">type</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">index</span><span class="o">;</span>
+    <span class="n">Edge</span> <span class="n">attached_to</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">fitsWidth</span><span class="o">(</span><span class="n">Edge</span> <span class="n">edge</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_6/Piece.java">Piece.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Piece</span>
+<span class="o">{</span>
+    <span class="n">Edge</span><span class="o">[]</span> <span class="n">edges</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isCorner</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_6/Puzzle.java">Puzzle.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Puzzle</span>
+<span class="o">{</span>
+    <span class="n">Piece</span><span class="o">[]</span> <span class="n">pieces</span><span class="o">;</span>
+    <span class="n">Piece</span><span class="o">[][]</span> <span class="n">solutions</span><span class="o">;</span>
+
+    <span class="c1">//The three types of pieces.</span>
+    <span class="n">Edge</span><span class="o">[]</span> <span class="n">inners</span><span class="o">,</span> <span class="n">outers</span><span class="o">,</span> <span class="n">flats</span><span class="o">;</span>
+    <span class="n">Piece</span><span class="o">[]</span> <span class="n">corners</span><span class="o">;</span>
+
+    <span class="c1">//Start with the edges</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="n">Piece</span> <span class="n">p</span> <span class="n">in</span> <span class="n">pieces</span>
+        <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="c1">//p has two flat edges)</span>
+            <span class="o">{</span>
+                <span class="c1">//add p to corners</span>
+            <span class="o">}</span>
+            <span class="k">for</span> <span class="n">each</span> <span class="n">edge</span> <span class="n">in</span> <span class="n">p</span><span class="o">.</span><span class="na">edges</span>
+            <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="c1">//edge is an inner edge)</span>
+                <span class="o">{</span>
+                    <span class="c1">//add to inners</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="c1">//edge is an outer edge)</span>
+                <span class="o">{</span>
+                    <span class="c1">//add to outers</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//We want to start with a corner.  Then we find an open edge on the corner and try to match it with an open piece.  Once finding the match, we attach the edge, remove the edge from our list of edges and find the next open edge.</span>
+
+    <span class="c1">//The next open edge refers to the one that is directly opposite our current edge, given that is available.  If it is not available, then the next edge can be any edge.  This makes a spiral.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">solve</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">Edge</span> <span class="n">currentEdge</span> <span class="o">=</span> <span class="n">getExposedEdge</span><span class="o">(</span><span class="n">corner</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">currentEdge</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="c1">//Get opposites</span>
+            <span class="n">Edge</span><span class="o">[]</span> <span class="n">oppoisites</span> <span class="o">=</span> <span class="n">currentEdge</span><span class="o">.</span><span class="na">type</span> <span class="o">==</span> <span class="n">inner</span><span class="o">?</span> <span class="n">outers</span> <span class="o">:</span> <span class="n">inners</span><span class="o">;</span>
+            <span class="c1">//Loop through opposites</span>
+            <span class="k">for</span> <span class="n">each</span> <span class="n">Edge</span> <span class="n">fittingEdge</span> <span class="n">in</span> <span class="n">opposites</span>
+            <span class="o">{</span>
+                <span class="c1">//If the opposite fits</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">currentEdge</span><span class="o">.</span><span class="na">fitsWith</span><span class="o">(</span><span class="n">fittingEdge</span><span class="o">))</span>
+                <span class="o">{</span>
+                    <span class="n">attachEdges</span><span class="o">(</span><span class="n">currentEdge</span><span class="o">,</span> <span class="n">fittingEdge</span><span class="o">);</span>
+                    <span class="n">removeFromList</span><span class="o">(</span><span class="n">currentEdge</span><span class="o">);</span>
+                    <span class="n">removeFromList</span><span class="o">(</span><span class="n">fittingEdge</span><span class="o">);</span>
+                    <span class="n">currentEdge</span> <span class="o">=</span> <span class="n">nextExposedEdge</span><span class="o">(</span><span class="n">fittingEdge</span><span class="o">);</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeFromList</span><span class="o">(</span><span class="n">Edge</span> <span class="n">edge</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">//We don&#39;t deal with flats</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">edge</span><span class="o">.</span><span class="na">type</span> <span class="o">==</span> <span class="n">flat</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">//Chooses which list to remove from</span>
+        <span class="n">Edge</span> <span class="n">array</span><span class="o">[]</span> <span class="o">=</span> <span class="o">(</span><span class="n">currentEdge</span><span class="o">.</span><span class="na">type</span> <span class="o">==</span> <span class="n">inner</span><span class="o">)</span> <span class="o">?</span> <span class="n">inners</span> <span class="o">:</span> <span class="n">outers</span><span class="o">;</span>
+        <span class="n">array</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">edge</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">//This will get the opposite edge if it is expose, if not it will just get the next exposed one.</span>
+    <span class="kd">public</span> <span class="n">Edge</span> <span class="nf">nextExposedEdge</span><span class="o">(</span><span class="n">Edge</span> <span class="n">edge</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">edge_idx</span> <span class="o">=</span> <span class="o">(</span><span class="n">edge</span><span class="o">.</span><span class="na">index</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)%</span><span class="mi">4</span><span class="o">;</span>
+        <span class="n">Edge</span> <span class="n">next_edge</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="na">parent</span><span class="o">.</span><span class="na">edges</span><span class="o">[</span><span class="n">edge_idx</span><span class="o">];</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">isExposed</span><span class="o">(</span><span class="n">next_edge</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="n">next_edge</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="nf">getExposedEdge</span><span class="o">(</span><span class="n">edge</span><span class="o">.</span><span class="na">parent</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">attechEdges</span><span class="o">(</span><span class="n">Edge</span> <span class="n">e1</span><span class="o">,</span> <span class="n">Edge</span> <span class="n">e2</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">e1</span><span class="o">.</span><span class="na">attached_to</span><span class="o">(</span><span class="n">e2</span><span class="o">);</span>
+        <span class="n">e2</span><span class="o">.</span><span class="na">attached_to</span><span class="o">(</span><span class="n">e1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+
+    <span class="c1">//An exposed edge occurs when we don&#39;t have a flat edge and it is attached to nothing.</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isExposed</span><span class="o">(</span><span class="n">Edge</span> <span class="n">edge</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">edge</span><span class="o">.</span><span class="na">type</span> <span class="o">!=</span> <span class="n">flat</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">edge</span><span class="o">.</span><span class="na">attached_to</span> <span class="o">==</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Edge</span> <span class="nf">getExposedEdge</span><span class="o">(</span><span class="n">Piece</span> <span class="n">p</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">//loop to find next exposed edge</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="n">Edge</span> <span class="n">edge</span> <span class="n">in</span> <span class="n">p</span><span class="o">.</span><span class="na">edges</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">isExposed</span><span class="o">(</span><span class="n">edge</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">retun</span> <span class="n">edge</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/problem-8_6-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/problem-8_6-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/problem-8_6-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 8_6[CTCI]</strong> was published on <time datetime="2015-10-01T20:00:47-07:00">October 01, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/music/kid-cudi-cudderisback/" title="Kid Cudi - Cudderisback">Kid Cudi - Cudderisback</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_5-ctci/" title="Problem 8_5[CTCI]">Problem 8_5[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_4-ctci/" title="Problem 8_4[CTCI]">Problem 8_4[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
