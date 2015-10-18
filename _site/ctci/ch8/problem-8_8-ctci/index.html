@@ -1,0 +1,477 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 8_8[CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 8_8[CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 8_8[CTCI]">
+
+<meta property="og:url" content="/ctci/ch8/problem-8_8-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/ch8/problem-8_8-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/ch8/problem-8_8-ctci/" rel="bookmark" title="Problem 8_8[CTCI]">Problem 8_8[CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_8">Github Source</a></p>
+
+<h3>Q:</h3>
+
+<p>Othello is played as follows: Each Othello piece is white on one side and black on the other. When a piece is surrounded by its opponents on both the left and right sides, or both the top and bottom, it is said to be captured and its color is flipped. On your turn, you must capture at least one of your opponent&#39;s pieces. The game ends when either user has no more valid moves. The win is assigned to the person with the most pieces. Implement the object-oriented design for Othello.</p>
+
+<h3>A:</h3>
+
+<p>Well initially, this makes me think about the objects we will need.  We need some sort of board object.  I probably want to store that as a 2d array just for simplicity.  We will also need a piece object which has an attribute which allows for white and black pieces.  Players will probably also be necessary.</p>
+
+<p>Some thoughts taken from the solutions:
+- You might think to make a Piece object and then BlackPiece and WhitePiece which will inherit properties from Piece, but this is inadvisable since we will flip colors frequently.</p>
+
+<ul>
+<li><p>You may want to split up Game and Board, or you can keep it together.  I would keep it separate.</p></li>
+<li><p>Keeping score has different options.  I would probably do it in Board.</p></li>
+<li><p>It would help if Game was singleton class.  However, this is an assumption.</p></li>
+</ul>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/Board.java">Board.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Board</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">blackCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">whiteCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="c1">//2d array to represent the pieces</span>
+    <span class="kd">private</span> <span class="n">Piece</span><span class="o">[][]</span> <span class="n">board</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Board</span><span class="o">(</span><span class="kt">int</span> <span class="n">rows</span><span class="o">,</span> <span class="kt">int</span> <span class="n">columns</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">board</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Piece</span><span class="o">[</span><span class="n">rows</span><span class="o">][</span><span class="n">columns</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">middleR</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">middleC</span> <span class="o">=</span> <span class="n">board</span><span class="o">[</span><span class="n">middleR</span><span class="o">].</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="o">;</span>
+        <span class="n">board</span><span class="o">[</span><span class="n">middleR</span><span class="o">][</span><span class="n">middleC</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>
+        <span class="n">board</span><span class="o">[</span><span class="n">middleRow</span><span class="o">+</span><span class="mi">1</span><span class="o">][</span><span class="n">middleC</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">);</span>
+        <span class="n">board</span><span class="o">[</span><span class="n">middleRow</span><span class="o">+</span><span class="mi">1</span><span class="o">][</span><span class="n">middleC</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>
+        <span class="n">board</span><span class="o">[</span><span class="n">middleRow</span><span class="o">][</span><span class="n">middleC</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>
+        <span class="n">blackCount</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="n">whiteCount</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">placeColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">column</span><span class="o">,</span> <span class="n">Color</span> <span class="n">c</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="c1">//For directions to flip</span>
+            <span class="kt">int</span><span class="o">[]</span> <span class="n">results</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">];</span>
+            <span class="n">results</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">flipSection</span><span class="o">(</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="n">column</span><span class="o">,</span><span class="n">color</span><span class="o">,</span><span class="n">Direction</span><span class="o">.</span><span class="na">up</span><span class="o">);</span>
+            <span class="n">results</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">flipSection</span><span class="o">(</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span><span class="n">column</span><span class="o">,</span><span class="n">color</span><span class="o">,</span><span class="n">Direction</span><span class="o">.</span><span class="na">down</span><span class="o">);</span>
+            <span class="n">results</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="n">flipSection</span><span class="o">(</span><span class="n">row</span><span class="o">,</span><span class="n">column</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span><span class="n">color</span><span class="o">,</span><span class="n">Direction</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+            <span class="n">results</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="n">flipSection</span><span class="o">(</span><span class="n">row</span><span class="o">,</span><span class="n">column</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="n">color</span><span class="o">,</span><span class="n">Direction</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+
+            <span class="kt">int</span> <span class="n">flipped</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="mi">4</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+            <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">results</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="n">flipped</span> <span class="o">+=</span><span class="n">results</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span><span class="o">(</span><span class="n">flipped</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="n">piece</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+            <span class="n">updateScore</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">flipped</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">flipSection</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">column</span><span class="o">,</span> <span class="n">Color</span> <span class="n">color</span><span class="o">,</span> <span class="n">Direction</span> <span class="n">d</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+        <span class="k">switch</span><span class="o">(</span><span class="n">d</span><span class="o">)</span>
+        <span class="o">{</span>
+        <span class="k">case</span> <span class="nl">up:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="nl">down:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="nl">left:</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="nl">right:</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">row</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">||</span> <span class="n">column</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="n">board</span><span class="o">.</span><span class="na">length</span><span class="o">||</span> <span class="n">column</span> <span class="o">&gt;</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">].</span><span class="na">length</span> <span class="o">||</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">].</span><span class="na">getColor</span><span class="o">()</span> <span class="o">==</span> <span class="n">color</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kt">int</span> <span class="n">flipped</span> <span class="o">=</span> <span class="n">flipSection</span><span class="o">(</span><span class="n">row</span><span class="o">+</span><span class="n">r</span><span class="o">,</span><span class="n">colum</span> <span class="o">+</span> <span class="n">c</span><span class="o">,</span> <span class="n">color</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">flipped</span> <span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">].</span><span class="na">flip</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">flipped</span> <span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScoreForColor</span><span class="o">(</span><span class="n">Color</span> <span class="n">c</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">return</span> <span class="n">blackCount</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">whiteCount</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateScore</span><span class="o">(</span><span class="n">Color</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">news</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">whiteCount</span> <span class="o">-=</span> <span class="o">(</span><span class="n">news</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+            <span class="n">blackCount</span> <span class="o">+=</span> <span class="n">news</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">whitecount</span> <span class="o">+=</span><span class="n">news</span><span class="o">;</span>
+            <span class="n">blackCount</span> <span class="o">-=(</span><span class="n">news</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printBoard</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">row</span><span class="o">&lt;</span> <span class="n">board</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">row</span><span class="o">++)</span>
+        <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">column</span> <span class="o">&lt;</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">].</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+            <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;_&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;B&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;W&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/Color.java">Color.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">Color</span>
+<span class="o">{</span>
+    <span class="n">White</span><span class="o">,</span> <span class="n">Black</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/Game.java">Game.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Game</span>
+<span class="o">{</span>
+    <span class="c1">//This will be sized at 2</span>
+    <span class="kd">private</span> <span class="n">Player</span><span class="o">[]</span> <span class="n">players</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Game</span> <span class="n">_instance</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Board</span> <span class="n">board</span><span class="o">;</span>
+    <span class="c1">//We create this as a singleton.  Also we assume 10x10</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">ROWS</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">COLUMNS</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nf">Game</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">board</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Board</span><span class="o">(</span><span class="n">ROWS</span><span class="o">,</span><span class="n">COLUMNS</span><span class="o">);</span>
+        <span class="n">players</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Player</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+        <span class="n">players</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Player</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">);</span>
+        <span class="n">players</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Player</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">//Standard singleton stuff.</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Game</span> <span class="nf">getInstance</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Game</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">_instance</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Board</span> <span class="nf">getBoard</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">board</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/Piece.java">Piece.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Piece</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Color</span> <span class="n">color</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Piece</span><span class="o">(</span><span class="n">Color</span> <span class="n">c</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">//Flip the color</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">flip</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">color</span> <span class="o">==</span> <span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">Black</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">White</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Color</span> <span class="nf">getColor</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">color</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/Piece.java">Piece.java</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Player</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Color</span> <span class="n">color</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Player</span><span class="o">(</span><span class="n">Color</span> <span class="n">c</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Game</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getBoard</span><span class="o">().</span><span class="na">getScoreForColor</span><span class="o">(</span><span class="n">color</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">movePiece</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">column</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Game</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getBoard</span><span class="o">().</span><span class="na">placeColor</span><span class="o">(</span><span class="n">row</span><span class="o">,</span><span class="n">column</span><span class="o">,</span><span class="n">color</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Color</span> <span class="nf">getColor</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">color</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/problem-8_8-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/problem-8_8-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/problem-8_8-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 8_8[CTCI]</strong> was published on <time datetime="2015-10-16T15:58:24-07:00">October 16, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/ch9/chapter-9-intro-ctci/" title="Chapter 9 Intro[CTCI]">Chapter 9 Intro[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_10-ctci/" title="Problem 8_10[CTCI]">Problem 8_10[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_9-ctci/" title="Problem 8_9[CTCI]">Problem 8_9[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

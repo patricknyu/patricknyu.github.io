@@ -1,0 +1,116 @@
+---
+layout: post
+title: "Problem 8_10[CTCI]"
+modified:
+categories: /ctci/ch8
+excerpt:
+tags: []
+image:
+  feature:
+date: 2015-10-16T16:06:18-07:00
+---
+[Github Source](https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_9)
+
+###Q:
+Design and implement a hash table which uses chaining (linked lists) to handle collisions.
+
+###A:
+
+We need to realize that we will have an issue when we we have a bunch of collisions, we actually can't differentiate between them once we put them on our hash.
+
+We need to create some sort of class that will allow us to differentiate.
+
+[Cell.java](https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_10/Cell.java)
+
+```java
+public class Cell<K,V>
+{
+	private K key;
+	private V value;
+	public Cell(K k, V v)
+	{
+		key = k;
+		value = v;
+	}
+
+	public boolean equivalent(Cell<K,V> c)
+	{
+		return equivalent(c.getKey());
+	}
+	public boolean equivalent(K k)
+	{
+		return key.equals(k);
+	}
+	public K getKey()
+	{
+		return key;
+	}
+	public V getValue()
+	{
+		return value;
+	}
+}
+```
+
+[Hash.java](https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_10/Hash.java)
+
+```java
+import java.util.LinkedList;
+
+public class Hash<K,V>
+{
+	private final int MAX_SIZE = 10;
+	//array of items
+	LinkedList<Cell<K,V>>[] items;
+
+	public Hash()
+	{
+		items = (LinkedList<Cell<K,V>>[]) new LinkedList[MAX_SIZE];
+	}
+
+	//Lame hash
+	public int hashCodeOfKey(K key)
+	{
+		return key.toString().length() % items.length;
+	}
+
+	public void put(K key, V value)
+	{
+		int x = hashCodeOfKey(key);
+		if (items[x] == null)
+		{
+			items[x] = new LinkedList<Cell<K,V>>();
+		}
+
+		LinkedList<Cell<K,V>> collided = items[x];
+
+		for(Cell<K,V> c: collided)
+		{
+			if(c.equivalent(key))
+			{
+				collided.remove(c);
+				break;
+			}
+		}
+		Cell<K,V> cell = new Cell<K,V>(key,value);
+	}
+
+	public V get(K key)
+	{
+		int x = hashCodeOfKey(key);
+		if(items[x] == null)
+		{
+			return null;
+		}
+		LinkedList<Cell<K,V>> collided = items[x];
+		for(Cell<K,V> c: collided)
+		{
+			if(c.equivalent(key))
+			{
+				return c.getValue();
+			}
+		}
+		return null;
+	}
+}
+```

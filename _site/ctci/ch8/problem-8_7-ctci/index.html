@@ -1,0 +1,355 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 8_7[CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 8_7[CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 8_7[CTCI]">
+
+<meta property="og:url" content="/ctci/ch8/problem-8_7-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/ch8/problem-8_7-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/ch8/problem-8_7-ctci/" rel="bookmark" title="Problem 8_7[CTCI]">Problem 8_7[CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_7">Github Source</a></p>
+
+<h1>8_7</h1>
+
+<h3>Q:</h3>
+
+<p>Explain how you would design a chat server.  In particular, provide details about the various background components, classes, and methods.  What would be the hardest problems to solve?</p>
+
+<h3>A:</h3>
+
+<p>Well this is a extremely difficult solution.  I&#39;m going to change pace and implement it in python.  This will be fun.</p>
+
+<p>I will need a UserMaster class which controls all the core user actions.  Then I&#39;ll have a User class which will have user actions.  I&#39;ll also have a conversation, groupchat, privatechat, message, addRequest, UserStatus, UserStatusType, and RequestStatus.</p>
+
+<p>I decided to write this in python.  Poorly...I need go go back and fix this</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">UserMaster</span><span class="p">:</span>
+    <span class="c">#look into this</span>
+    <span class="k">def</span> <span class="nf">_init_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">addUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fromUser</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toUser</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">toAccountName</span><span class="p">)</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">AddRequest</span><span class="p">(</span><span class="n">fromUser</span><span class="p">,</span><span class="n">toUser</span><span class="p">,</span><span class="n">new</span> <span class="n">Date</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toUser</span><span class="o">.</span><span class="n">recivedAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fromUser</span><span class="o">.</span><span class="n">sentAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">approveAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">RequestStatus</span><span class="o">.</span><span class="n">Accepted</span>
+        <span class="bp">self</span><span class="o">.</span><span class="kn">from</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from</span><span class="o">.</span><span class="n">addContact</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">addContact</span><span class="p">(</span><span class="n">from</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">rejectAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">RequestStatus</span><span class="o">.</span><span class="n">Rejected</span>
+        <span class="bp">self</span><span class="o">.</span><span class="kn">from</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from</span><span class="o">.</span><span class="n">removeAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">removeAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">userSignedOn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">accountName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="c">#needs changing</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">setStatus</span><span class="p">(</span><span class="n">UserStatus</span><span class="p">(</span><span class="n">UserStatusType</span><span class="o">.</span><span class="n">Available</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">onlineUsers</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">user</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">userSignedOff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">accountName</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="c">#same here</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">setSTatus</span><span class="p">(</span><span class="n">new</span> <span class="n">UserStatus</span><span class="p">(</span><span class="n">UserStatusType</span><span class="o">.</span><span class="n">Offline</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">onlineUsers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getID</span><span class="p">())</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+    <span class="c">#of course we still need to look into this</span>
+    <span class="k">def</span> <span class="nf">_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">accountName</span><span class="p">,</span> <span class="n">fullName</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accontName</span> <span class="o">=</span> <span class="n">accoutName</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fullName</span> <span class="o">=</span> <span class="n">fullName</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+
+    <span class="k">def</span> <span class="nf">sendMessageToUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">toUser</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+        <span class="n">chat</span> <span class="o">=</span> <span class="n">privateChats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">toUser</span><span class="o">.</span><span class="n">getId</span><span class="p">())</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">chat</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="n">chat</span> <span class="o">=</span> <span class="n">PrivateChat</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="n">toUser</span><span class="p">)</span>
+            <span class="n">privateChats</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">toUser</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">chat</span><span class="p">)</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">Date</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">chat</span><span class="o">.</span><span class="n">addMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sendMessageToGroupChat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">groupId</span><span class="p">,</span><span class="n">content</span><span class="p">):</span>
+        <span class="n">chat</span> <span class="o">=</span> <span class="n">groupChats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">groupId</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">chat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">Date</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">chat</span><span class="o">.</span><span class="n">addMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">false</span>
+
+    <span class="k">def</span> <span class="nf">setStatus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">status</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+
+    <span class="k">def</span> <span class="nf">getStatus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span>
+
+    <span class="k">def</span> <span class="nf">addContact</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+        <span class="c">#If we already have this user</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">contacts</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">())):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">contacts</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">user</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">receivedAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
+        <span class="n">senderId</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span>
+        <span class="k">if</span><span class="p">(</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">senderId</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">senderId</span><span class="p">,</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sentAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
+        <span class="n">receiverId</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span>
+        <span class="k">if</span><span class="p">(</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">sentAddRequest</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">receiverId</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sentAddRequests</span><span class="o">.</span><span class="n">pu</span><span class="p">(</span><span class="n">receiverId</span><span class="p">,</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">removeAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="p">):</span>
+            <span class="n">sentAddRequests</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">requestAddUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
+        <span class="c">#look into this.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">UserMaster</span><span class="o">.</span><span class="n">getInstance</span><span class="p">()</span><span class="o">.</span><span class="n">addUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">addConversation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conversation</span><span class="p">):</span>
+        <span class="c">#there is a problem here</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">conversation</span><span class="p">)</span> <span class="o">==</span> <span class="n">PrivateChat</span><span class="p">):</span>
+            <span class="n">otherUser</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">getOtherParticipant</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">privateChats</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">otherUser</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">conversation</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">converation</span><span class="p">)</span> <span class="o">==</span> <span class="n">GroupChat</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">groupChats</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">converation</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getId</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">;</span>
+
+    <span class="k">def</span> <span class="nf">getAccountName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">accountName</span>
+
+    <span class="k">def</span> <span class="nf">getFullName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fullName</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch8/problem-8_7-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch8/problem-8_7-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch8/problem-8_7-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 8_7[CTCI]</strong> was published on <time datetime="2015-10-16T15:54:22-07:00">October 16, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/ch9/chapter-9-intro-ctci/" title="Chapter 9 Intro[CTCI]">Chapter 9 Intro[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_10-ctci/" title="Problem 8_10[CTCI]">Problem 8_10[CTCI]</a></li>
+    
+      <li><a href="/ctci/ch8/problem-8_9-ctci/" title="Problem 8_9[CTCI]">Problem 8_9[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
