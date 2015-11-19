@@ -1,41 +1,41 @@
-<!doctype html>
+  <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Patrick Yu</title>
+<title>Problem 1_1 [CTCI] &#8211; Patrick Yu</title>
 
-<meta name="keywords" content="Jekyll, theme, responsive, blog, template">
+<meta name="keywords" content="">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Patrick Yu">
+<meta name="twitter:title" content="Problem 1_1 [CTCI]">
 
 <meta name="twitter:site" content="@PatrickYu5">
 <meta name="twitter:creator" content="@PatrickYu5">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="/images/zion2.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Patrick Yu">
+<meta property="og:title" content="Problem 1_1 [CTCI]">
 
-<meta property="og:url" content="/">
+<meta property="og:url" content="/ctci/ch1/problem-1_1-ctci/">
 <meta property="og:site_name" content="Patrick Yu">
 
-<meta property="og:image" content="/images/zion2.jpg">
+<meta property="og:image" content="/images/default-thumb.png">
 
 
 
 
 
 
-<link rel="canonical" href="/">
+<link rel="canonical" href="/ctci/ch1/problem-1_1-ctci/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -89,7 +89,7 @@
 
 </head>
 
-<body class="home">
+<body class="post">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
@@ -126,17 +126,6 @@
 	</div><!-- /.top-navigation -->
 </div><!-- /.navigation-wrapper -->
 
-
-  <div class="image-wrap">
-  <img src=
-    
-      "/images/zion2.jpg"
-    
-  alt=" feature image">
-  
-    <span class="image-credit">Photo Credit: <a href="https://www.flickr.com/photos/26298797@N07/7161245677/">Steven Newton</a></span>
-  
-  </div><!-- /.image-wrap -->
 
 
 <div id="main" role="main">
@@ -175,48 +164,85 @@
 </div>
 
   </div>
-  <div id="index">
-    <h3><a href="/posts/">Recent Posts</a></h3>
-    
-    <article>
+  <article class="post">
+    <div class="headline-wrap">
       
-        <h2><a href="/ctci/ch1/problem-1_1-ctci/" title="Problem 1_1 [CTCI]">Problem 1_1 [CTCI]</a></h2>
-        <p></p>
+        <h1><a href="/ctci/ch1/problem-1_1-ctci/" rel="bookmark" title="Problem 1_1 [CTCI]">Problem 1_1 [CTCI]</a></h1>
       
-    </article>
-    
-    <article>
-      
-        <h2><a href="/ctci/ch1/chapter-1-ctci/" title="Chapter 1 [CTCI]">Chapter 1 [CTCI]</a></h2>
-        <p></p>
-      
-    </article>
-    
-    <article>
-      
-        <h2><a href="/posts/getting-back-into-it/" title="Getting Back Into It">Getting Back Into It</a></h2>
-        <p></p>
-      
-    </article>
-    
-    <article>
-      
-        <h2><a href="/ctci/ch9/chapter-9-intro-ctci/" title="Chapter 9 Intro[CTCI]">Chapter 9 Intro[CTCI]</a></h2>
-        <p></p>
-      
-    </article>
-    
-    <article>
-      
-        <h2><a href="/ctci/ch8/problem-8_10-ctci/" title="Problem 8_10[CTCI]">Problem 8_10[CTCI]</a></h2>
-        <p></p>
-      
-    </article>
-    
-  </div><!-- /#index -->
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3>Q</h3>
+
+<p>Implement an algoirthm to determine if a string has all unique characters.  What if you cannot use additional data structures?</p>
+
+<h3>A</h3>
+
+<p>Here&#39;s the Java solution.</p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_1">Java for Problem 1.1</a></p>
+
+<p>Here&#39;s the Python one.</p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_1">Python for Problem 1.1</a></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fileinput</span>
+
+<span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">charArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">charIdx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">26</span>
+    <span class="c">#print(charArr)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">charIdx</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">97</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">charIdx</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">97</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)))</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch1/problem-1_1-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch1/problem-1_1-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch1/problem-1_1-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 1_1 [CTCI]</strong> was published on <time datetime="2015-11-18T22:24:27-08:00">November 18, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
 </div><!-- /#main -->
 
 <div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/ch1/chapter-1-ctci/" title="Chapter 1 [CTCI]">Chapter 1 [CTCI]</a></li>
+    
+      <li><a href="/posts/getting-back-into-it/" title="Getting Back Into It">Getting Back Into It</a></li>
+    
+      <li><a href="/ctci/ch9/chapter-9-intro-ctci/" title="Chapter 9 Intro[CTCI]">Chapter 9 Intro[CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
   <footer>
     
 

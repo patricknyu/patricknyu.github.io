@@ -4,13 +4,96 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-11-13T01:04:27-08:00</updated>
+<updated>2015-11-18T22:30:05-08:00</updated>
 <id>/</id>
 <author>
   <name>Patrick Yu</name>
   <uri>/</uri>
   <email>patrickyuemail@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Problem 1_1 [CTCI]]]></title>
+  <link rel="alternate" type="text/html" href="/ctci/ch1/problem-1_1-ctci/" />
+  <id>/ctci/ch1/problem-1_1-ctci</id>
+  <published>2015-11-18T22:24:27-08:00</published>
+  <updated>2015-11-18T22:24:27-08:00</updated>
+  <author>
+    <name>Patrick Yu</name>
+    <uri></uri>
+    <email>patrickyuemail@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h3&gt;Q&lt;/h3&gt;
+
+&lt;p&gt;Implement an algoirthm to determine if a string has all unique characters.  What if you cannot use additional data structures?&lt;/p&gt;
+
+&lt;h3&gt;A&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;#39;s the Java solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_1&quot;&gt;Java for Problem 1.1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s the Python one.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_1&quot;&gt;Python for Problem 1.1&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fileinput&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;charArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;charIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#print(charArr)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;charArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;charIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;charIdx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;97&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileinput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;p&gt;&lt;a href=&quot;/ctci/ch1/problem-1_1-ctci/&quot;&gt;Problem 1_1 [CTCI]&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on November 18, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Chapter 1 [CTCI]]]></title>
+  <link rel="alternate" type="text/html" href="/ctci/ch1/chapter-1-ctci/" />
+  <id>/ctci/ch1/chapter-1-ctci</id>
+  <published>2015-11-18T22:22:00-08:00</published>
+  <updated>2015-11-18T22:22:00-08:00</updated>
+  <author>
+    <name>Patrick Yu</name>
+    <uri></uri>
+    <email>patrickyuemail@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I&amp;#39;m starting from the beginning.  I&amp;#39;ve done most of these problems and for the most part, they aren&amp;#39;t too dificult.  I&amp;#39;m rewriting them in Python which feels like cheating sometimes.  I might fill in this intro later.&lt;/p&gt;
+
+&lt;h1&gt;Arrays and Strings&lt;/h1&gt;
+
+&lt;h3&gt;Hash Tables&lt;/h3&gt;
+
+&lt;h3&gt;ArrayList&lt;/h3&gt;
+
+&lt;h3&gt;StringBuffer&lt;/h3&gt;
+
+&lt;p&gt;This is extremely useful!&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/ctci/ch1/chapter-1-ctci/&quot;&gt;Chapter 1 [CTCI]&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on November 18, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
   
@@ -2103,86 +2186,6 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     &lt;p&gt;&lt;a href=&quot;/acceleratedc++/ch2/problem-2_8/&quot;&gt;Problem 2_8&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on September 25, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Problem 2_7]]></title>
-  <link rel="alternate" type="text/html" href="/acceleratedc++/ch2/problem-2_7/" />
-  <id>/acceleratedc++/ch2/problem-2_7</id>
-  <published>2015-09-25T00:40:22-07:00</published>
-  <updated>2015-09-25T00:40:22-07:00</updated>
-  <author>
-    <name>Patrick Yu</name>
-    <uri></uri>
-    <email>patrickyuemail@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;h3&gt;Q:&lt;/h3&gt;
-
-&lt;p&gt;Write a program to count down from 10 to -5 .&lt;/p&gt;
-
-&lt;h3&gt;A:&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-    &lt;p&gt;&lt;a href=&quot;/acceleratedc++/ch2/problem-2_7/&quot;&gt;Problem 2_7&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on September 25, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
-<entry>
-  <title type="html"><![CDATA[Problem 2_6]]></title>
-  <link rel="alternate" type="text/html" href="/acceleratedc++/ch2/problem-2_6/" />
-  <id>/acceleratedc++/ch2/problem-2_6</id>
-  <published>2015-09-25T00:40:18-07:00</published>
-  <updated>2015-09-25T00:40:18-07:00</updated>
-  <author>
-    <name>Patrick Yu</name>
-    <uri></uri>
-    <email>patrickyuemail@gmail.com</email>
-  </author>
-  <content type="html">
-    &lt;h3&gt;Q:&lt;/h3&gt;
-
-&lt;p&gt;What does the following code do?&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;A:&lt;/h3&gt;
-
-&lt;p&gt;This prints something that will look like.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-    &lt;p&gt;&lt;a href=&quot;/acceleratedc++/ch2/problem-2_6/&quot;&gt;Problem 2_6&lt;/a&gt; was originally published by Patrick Yu at &lt;a href=&quot;&quot;&gt;Patrick Yu&lt;/a&gt; on September 25, 2015.&lt;/p&gt;
   </content>
 </entry>
 
