@@ -42,4 +42,6 @@ if __name__ == "__main__":
 	for line in fileinput.input():
 		print(line)
 		print(unique(str(line)))
-```		
+```
+
+I'm not going to do 1.2 since it is a C++ problem.  My C++ is nowhere near strong enough to do difficult problems.

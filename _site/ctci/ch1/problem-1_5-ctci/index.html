@@ -1,0 +1,293 @@
+  <!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Problem 1_5 [CTCI] &#8211; Patrick Yu</title>
+
+<meta name="keywords" content="">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Problem 1_5 [CTCI]">
+
+<meta name="twitter:site" content="@PatrickYu5">
+<meta name="twitter:creator" content="@PatrickYu5">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problem 1_5 [CTCI]">
+
+<meta property="og:url" content="/ctci/ch1/problem-1_5-ctci/">
+<meta property="og:site_name" content="Patrick Yu">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/ctci/ch1/problem-1_5-ctci/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Patrick Yu Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<!--
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.ico">
+<link rel="shortcut icon" href="/images/PatrickFavicon.ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="/images/PatrickFavicon.ico/apple-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+-->
+<link rel="apple-touch-icon" sizes="57x57" href="/images/PatrickFavicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/PatrickFavicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/PatrickFavicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/PatrickFavicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/PatrickFavicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/PatrickFavicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/PatrickFavicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/PatrickFavicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/PatrickFavicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/PatrickFavicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/PatrickFavicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/PatrickFavicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/PatrickFavicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/images/PatrickFavicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/PatrickFavicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Patrick Yu</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/resume/pdf/patrickyuresume2.pdf" >Resume</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/books/" >What I'm doing</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/patrick.jpg" class="bio-photo" alt="Patrick Yu bio photo">
+
+
+  <h3 itemprop="name">Patrick Yu</h3>
+  <p>I still haven't found what I'm looking for.</p>
+  <a href="mailto:patrickyuemail@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/PatrickYu5" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/patricknyu" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://soundcloud.com/PatrickYu" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/ctci/ch1/problem-1_5-ctci/" rel="bookmark" title="Problem 1_5 [CTCI]">Problem 1_5 [CTCI]</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3>Q:</h3>
+
+<p>Implement a method to perform basic string compression using the counts of repeated characters.  For example, the string aabcccccaaa would become a2b1c5a3.  If the &quot;compressed&quot; string would not become smaller than the original string, your method should return the original string.  You can assume the string has only upper and lower case letters (a-z).</p>
+
+<h3>A:</h3>
+
+<p>This is an easy question if you use a StringBuilder/StringBuffer in Java.  It&#39;s just as easy in Python using a list.</p>
+
+<p>First, write a method to check what the compressed length would be.  If not shorter, don&#39;t run your compression.</p>
+
+<p>As far as the compression - you can iterate through a character array while carrying a count and last character.  Each time your current character is equal to the last character. You add 1 to count.  If they are not equal add the last character and the last character&#39;s count to your Python list/StringBuilder.  Then set last character to current one and set count to 1.</p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_5">Java for Problem 1.5</a></p>
+
+<p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_5">compressString.py</a></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fileinput</span>
+<span class="k">def</span> <span class="nf">checkCompression</span><span class="p">(</span><span class="n">charArr</span><span class="p">):</span>
+    <span class="n">original</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">currentChar</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">):</span>
+            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">currentChar</span><span class="p">):</span>
+            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">new</span><span class="o">+=</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">new</span>
+<span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">charArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">checkCompression</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="n">currentChar</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
+            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentChar</span><span class="p">)</span>
+            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentCount</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span> <span class="s">&#39;&#39;</span> <span class="ow">and</span> <span class="n">currentCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span><span class="n">i</span><span class="p">):</span>
+            <span class="n">currentCount</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span><span class="n">currentChar</span><span class="p">):</span>
+            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentChar</span><span class="p">)</span>
+            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentCount</span><span class="p">)</span>
+            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="c"># This is a bit slow since we don&#39;t check for it being short till the end.</span>
+<span class="c"># if this was Java we should be using a StringBuilder</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+</code></pre></div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/ctci/ch1/problem-1_5-ctci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/ctci/ch1/problem-1_5-ctci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/ctci/ch1/problem-1_5-ctci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Problem 1_5 [CTCI]</strong> was published on <time datetime="2015-11-19T23:43:29-08:00">November 19, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/ctci/ch1/problem-1_8-ctci/" title="Problem 1_8 [CTCI]">Problem 1_8 [CTCI]</a></li>
+    
+      <li><a href="/ctci/ch1/problem-1_7-ctci/" title="Problem 1_7 [CTCI]">Problem 1_7 [CTCI]</a></li>
+    
+      <li><a href="/ctci/ch1/problem-1_6-ctci/" title="Problem 1_6 [CTCI]">Problem 1_6 [CTCI]</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
