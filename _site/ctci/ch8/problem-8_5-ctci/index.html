@@ -173,172 +173,176 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_5">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Design the data structures for an online book system.</p>
 
-<h3>A:</h3>
-
+<h3 id="a">A:</h3>
 <p>This is a pretty vague description of a book system.  With all other OOD questions, we must ensure we ask enough questions to properly understand what we are asked to accomplish.</p>
 
-<p>I&#39;m going to assume this is a reader system which similar to a kindle, but is on a computer.</p>
+<p>I’m going to assume this is a reader system which similar to a kindle, but is on a computer.</p>
 
-<p>I&#39;m going to create a Book, Kindle, and Library class.</p>
+<p>I’m going to create a Book, Kindle, and Library class.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Book.java">Book.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">Author</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">Title</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">text</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">String</span> <span class="n">a</span><span class="o">,</span> <span class="n">String</span> <span class="n">ti</span><span class="o">,</span> <span class="n">String</span> <span class="n">te</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
-        <span class="n">Author</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
-        <span class="n">Title</span> <span class="o">=</span> <span class="n">ti</span><span class="o">;</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">te</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class Book
+{
+	private int id;
+	private String Author;
+	private String Title;
+	private String text;</p>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getID</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setID</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAuthor</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">Author</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAuthor</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">Author</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">Title</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">ti</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">Title</span> <span class="o">=</span> <span class="n">ti</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getText</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">text</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setText</span><span class="o">(</span><span class="n">String</span> <span class="n">te</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">te</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public Book(int i, String a, String ti, String te)
+{
+	id = i;
+	Author = a;
+	Title = ti;
+	text = te;
+}
+
+public int getID()
+{
+	return id;
+}
+public void setID(int i)
+{
+	id = i;
+}
+public String getAuthor()
+{
+	return Author;
+}
+public void setAuthor(String a)
+{
+	Author = a;
+}
+public String getTitle()
+{
+	return Title;
+}
+public void setTitle(String ti)
+{
+	Title = ti;
+}
+public String getText()
+{
+	return text;
+}
+public void setText(String te)
+{
+	text = te;
+} } ```
+</code></pre>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Library.java">Library.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Hashtable</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Library</span>
-<span class="o">{</span>
-    <span class="c1">//Where we hold the books, book id will be the integer</span>
-    <span class="kd">private</span> <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Book</span><span class="o">&gt;</span> <span class="n">lib</span><span class="o">;</span>
+<p>```java
+import java.util.Hashtable;</p>
 
-    <span class="c1">//Adding books to our library</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
-        <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We already have this book&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">else</span>
-        <span class="o">{</span>
-            <span class="n">lib</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">(),</span><span class="n">b</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<p>public class Library
+{
+	//Where we hold the books, book id will be the integer
+	private Hashtable&lt;Integer, Book&gt; lib;</p>
 
-    <span class="c1">//Getting rid of books from our library</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
-        <span class="o">{</span>
-            <span class="n">lib</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
-        <span class="o">}</span>
-        <span class="k">else</span>
-        <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book.&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<pre><code>//Adding books to our library
+public void addBook(Book b)
+{
+	if(lib.containsKey(b.getID()))
+	{
+		System.out.println("We already have this book");
+	}
+	else
+	{
+		lib.put(b.getID(),b);
+	}
+}
 
-    <span class="c1">//Grabbing books from our library.</span>
-    <span class="kd">public</span> <span class="n">Book</span> <span class="nf">get</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(!</span><span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">()))</span>
-        <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book.&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">else</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">containsBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">b</span><span class="o">.</span><span class="na">getID</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+//Getting rid of books from our library
+public void removeBook(Book b)
+{
+	if(lib.containsKey(b.getID()))
+	{
+		lib.remove(b.getID());
+	}
+	else
+	{
+		System.out.println("We don't have this book.");
+	}
+}
+
+//Grabbing books from our library.
+public Book get(Book b)
+{
+	if(!lib.containsKey(b.getID()))
+	{
+		System.out.println("We don't have this book.");
+	}
+	else
+	{
+		return lib.get(b.getID());
+	}
+	return null;
+}
+public boolean containsBook(Book b)
+{
+	return lib.containsKey(b.getID());
+} } ```
+</code></pre>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_5/Kindle.java">Kindle.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Kindle</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">storage</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Library</span> <span class="n">lib</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Book</span> <span class="n">currentBook</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Kindle</span><span class="o">(</span><span class="n">String</span> <span class="n">u</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="n">Library</span> <span class="n">l</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">storage</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-        <span class="n">username</span> <span class="o">=</span> <span class="n">u</span><span class="o">;</span>
-        <span class="n">lib</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class Kindle
+{
+	private int storage;
+	private Library lib;
+	private String username;
+	private Book currentBook;</p>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStorageSize</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">storage</span><span class="o">;</span>
-    <span class="o">}</span>
+<pre><code>public Kindle(String u, int s, Library l)
+{
+	storage = s;
+	username = u;
+	lib = l;
+}
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUser</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">username</span><span class="o">;</span>
-    <span class="o">}</span>
+public int getStorageSize()
+{
+	return storage;
+}
 
-    <span class="kd">public</span> <span class="n">Book</span> <span class="nf">getCurrentBook</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">currentBook</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">readBook</span><span class="o">(</span><span class="n">Book</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">currentBook</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;You&#39;re already reading something else!  Finish that first!&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
+public String getUser()
+{
+	return username;
+}
 
-        <span class="k">if</span> <span class="o">(!</span><span class="n">lib</span><span class="o">.</span><span class="na">containsBook</span><span class="o">(</span><span class="n">b</span><span class="o">))</span>
-        <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;We don&#39;t have this book to read&quot;</span><span class="o">);</span>
-        <span class="o">}</span>
+public Book getCurrentBook()
+{
+	return currentBook;
+}
+public void readBook(Book b)
+{
+	if(currentBook != null)
+	{
+		System.out.println("You're already reading something else!  Finish that first!");
+	}
 
-        <span class="n">currentBook</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-    <span class="o">}</span>
+	if (!lib.containsBook(b))
+	{
+		System.out.println("We don't have this book to read");
+	}
 
-    <span class="c1">//There is probably a better way to implement this part.</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stopReading</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="n">currentBook</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+	currentBook = b;
+}
+
+//There is probably a better way to implement this part.
+public void stopReading()
+{
+	currentBook = null;
+} } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -381,7 +385,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

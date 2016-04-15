@@ -171,70 +171,72 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
+      <h3 id="q">Q:</h3>
 
-<p>Implement a method to perform basic string compression using the counts of repeated characters.  For example, the string aabcccccaaa would become a2b1c5a3.  If the &quot;compressed&quot; string would not become smaller than the original string, your method should return the original string.  You can assume the string has only upper and lower case letters (a-z).</p>
+<p>Implement a method to perform basic string compression using the counts of repeated characters.  For example, the string aabcccccaaa would become a2b1c5a3.  If the “compressed” string would not become smaller than the original string, your method should return the original string.  You can assume the string has only upper and lower case letters (a-z).</p>
 
-<h3>A:</h3>
+<h3 id="a">A:</h3>
 
-<p>This is an easy question if you use a StringBuilder/StringBuffer in Java.  It&#39;s just as easy in Python using a list.</p>
+<p>This is an easy question if you use a StringBuilder/StringBuffer in Java.  It’s just as easy in Python using a list.</p>
 
-<p>First, write a method to check what the compressed length would be.  If not shorter, don&#39;t run your compression.</p>
+<p>First, write a method to check what the compressed length would be.  If not shorter, don’t run your compression.</p>
 
-<p>As far as the compression - you can iterate through a character array while carrying a count and last character.  Each time your current character is equal to the last character. You add 1 to count.  If they are not equal add the last character and the last character&#39;s count to your Python list/StringBuilder.  Then set last character to current one and set count to 1.</p>
+<p>As far as the compression - you can iterate through a character array while carrying a count and last character.  Each time your current character is equal to the last character. You add 1 to count.  If they are not equal add the last character and the last character’s count to your Python list/StringBuilder.  Then set last character to current one and set count to 1.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_5">Java for Problem 1.5</a></p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_5">compressString.py</a></p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fileinput</span>
-<span class="k">def</span> <span class="nf">checkCompression</span><span class="p">(</span><span class="n">charArr</span><span class="p">):</span>
-    <span class="n">original</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">new</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">currentChar</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
-            <span class="k">continue</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">):</span>
-            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
-            <span class="n">new</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">currentChar</span><span class="p">):</span>
-            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
-            <span class="n">new</span><span class="o">+=</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="n">new</span>
-<span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">charArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">checkCompression</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">s</span>
-    <span class="n">currentChar</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
-    <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
-            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentChar</span><span class="p">)</span>
-            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentCount</span><span class="p">)</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span> <span class="s">&#39;&#39;</span> <span class="ow">and</span> <span class="n">currentCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
-            <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">currentChar</span> <span class="o">==</span><span class="n">i</span><span class="p">):</span>
-            <span class="n">currentCount</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span><span class="n">currentChar</span><span class="p">):</span>
-            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentChar</span><span class="p">)</span>
-            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currentCount</span><span class="p">)</span>
-            <span class="n">currentChar</span> <span class="o">=</span> <span class="n">i</span>
-            <span class="n">currentCount</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">charArr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">s</span>
 
-<span class="c"># This is a bit slow since we don&#39;t check for it being short till the end.</span>
-<span class="c"># if this was Java we should be using a StringBuilder</span>
+<p>```python
+import fileinput
+def checkCompression(charArr):
+	original = len(charArr)-1
+	new = 0
+	currentChar = ‘’
+	for i in charArr:
+		if(i == ‘\n’):
+			continue
+		if(currentChar == ‘’):
+			currentChar = i
+			new = 2
+		if(i != currentChar):
+			currentChar = i
+			new+=2
+	return new
+def compress(s):
+	charArr = list(s)
+	if(checkCompression(charArr)&gt;= len(charArr)-1):
+		return s
+	currentChar = ‘’
+	currentCount = 0
+	answer = []
+	for i in charArr:
+		if(i == ‘\n’):
+			answer.append(currentChar)
+			answer.append(currentCount)
+		if(currentChar == ‘’ and currentCount == 0):
+			currentChar = i
+			currentCount = 1
+		if(currentChar ==i):
+			currentCount+=1
+		elif(i !=currentChar):
+			answer.append(currentChar)
+			answer.append(currentCount)
+			currentChar = i
+			currentCount = 1
+	if(len(answer) &lt; len(charArr)-1):
+		return ‘‘.join(str(i) for i in answer)
+	return s</p>
 
+<h1 id="this-is-a-bit-slow-since-we-dont-check-for-it-being-short-till-the-end">This is a bit slow since we don’t check for it being short till the end.</h1>
+<p># if this was Java we should be using a StringBuilder</p>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-</code></pre></div>
+<p>if <strong>name</strong> == “<strong>main</strong>”:
+	for line in fileinput.input():
+		print(line)
+		print(compress(line))
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -277,7 +279,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

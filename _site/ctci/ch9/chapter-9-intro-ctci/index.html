@@ -171,9 +171,9 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h2>Recursion and Dynamic Programming</h2>
+      <h2 id="recursion-and-dynamic-programming">Recursion and Dynamic Programming</h2>
 
-<h4>Approach</h4>
+<h4 id="approach">Approach</h4>
 
 <p>When trying to solve f(n), we have to look at f(n-1) first.</p>
 
@@ -186,47 +186,53 @@
 <p>Dynamic programming is a powerful way to solve problems.  There was a time when I was very good at it.</p>
 
 <p>The example of dynamic programming provided by the book is the Fibonnaci sequence.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="nf">fib</span><span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div>
-<p>A big difficulty with dynamic programming is runtime analysis.  </p>
+
+<p><code>java
+public int fib(int i)
+{
+	if(i==0)
+	{
+		return 0;
+	}
+	if(i==1)
+	{
+		return 1;
+	}
+	return fib(i-1) + fib(i-2);
+}
+</code></p>
+
+<p>A big difficulty with dynamic programming is runtime analysis.</p>
 
 <p>For example, see that for this Fibonnaci sequence has a very bad time complexity of O(2<sup>n</sup>).</p>
 
 <p>Here is an easy way to speed it up.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">int</span><span class="o">[]</span> <span class="n">fib</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">max</span><span class="o">];</span>
 
-<span class="kt">int</span> <span class="nf">fibonnaci</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
-<span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-  <span class="o">{</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span>
-  <span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="o">)</span>
-  <span class="o">{</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-  <span class="o">}</span>
-  <span class="k">if</span><span class="o">(</span><span class="n">fib</span><span class="o">[</span><span class="n">i</span><span class="o">]!=</span><span class="mi">0</span><span class="o">)</span>
-  <span class="o">{</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-  <span class="o">}</span>
-  <span class="n">fib</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">fibonnaci</span><span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">)+</span><span class="n">fibonnaci</span><span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="o">);</span>
-  <span class="k">return</span> <span class="n">fib</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-<span class="o">}</span>
-</code></pre></div>
+<p>```java
+int[] fib = new int[max];</p>
+
+<p>int fibonnaci(int i)
+{
+  if (i == 0)
+  {
+    return 0;
+  }
+  if(i==1)
+  {
+    return 1;
+  }
+  if(fib[i]!=0)
+  {
+    return fib[i];
+  }
+  fib[i] = fibonnaci(i-1)+fibonnaci(i-2);
+  return fib[i];
+}
+```</p>
+
 <p>This allows us to cache the results and get O(n) time.</p>
 
-<h3>Recursive vs Iterative</h3>
+<h3 id="recursive-vs-iterative">Recursive vs Iterative</h3>
 
 <p>Recursion is slow.  Remember that.</p>
 
@@ -272,7 +278,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

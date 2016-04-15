@@ -171,35 +171,38 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
+      <h3 id="q">Q:</h3>
 
 <p>Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees.  Can you do this in place?</p>
 
-<h3>A:</h3>
+<h3 id="a">A:</h3>
 
 <p>This is actually a cool problem.  It requires you to keep track of a lot of things at once when creating your algorithm.</p>
 
-<p>Essentially you want to go layer by layer through the matrix.  You iterate starting at layer 0 to layer n/2.  Then you have another loop where you take part of each layer you are at and rotate them. Storing one section at a time.  It&#39;s easiest to understand if you read through the code.</p>
+<p>Essentially you want to go layer by layer through the matrix.  You iterate starting at layer 0 to layer n/2.  Then you have another loop where you take part of each layer you are at and rotate them. Storing one section at a time.  It’s easiest to understand if you read through the code.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_6">Java for Problem 1.6</a></p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_6">rotate.py</a></p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">first</span> <span class="o">=</span> <span class="n">layer</span>
-        <span class="n">last</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">layer</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">):</span>
-            <span class="n">offset</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">first</span>
-            <span class="n">top</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">first</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">matrix</span><span class="p">[</span><span class="n">first</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">last</span><span class="o">-</span><span class="n">offset</span><span class="p">][</span><span class="n">first</span><span class="p">]</span>
-            <span class="n">matrix</span><span class="p">[</span><span class="n">last</span><span class="o">-</span><span class="n">offset</span><span class="p">][</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">last</span><span class="p">][</span><span class="n">last</span><span class="o">-</span><span class="n">offset</span><span class="p">]</span>
-            <span class="n">matrix</span><span class="p">[</span><span class="n">last</span><span class="p">][</span><span class="n">last</span><span class="o">-</span><span class="n">offset</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">last</span><span class="p">]</span>
-            <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">last</span><span class="p">]</span> <span class="o">=</span> <span class="n">top</span>
-    <span class="k">return</span> <span class="n">matrix</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</code></pre></div>
+<p>```python
+def rotate(matrix):
+	for layer in range(0,len(matrix)/2):
+		first = layer
+		last = len(matrix)-1-layer
+		for i in range(first,last):
+			offset = i - first
+			top = matrix[first][i]
+			matrix[first][i] = matrix[last-offset][first]
+			matrix[last-offset][first] = matrix[last][last-offset]
+			matrix[last][last-offset] = matrix[i][last]
+			matrix[i][last] = top
+	return matrix</p>
+
+<p>a = [[1,2,3],[4,5,6],[7,8,9]]
+print(rotate(a))
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -242,7 +245,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

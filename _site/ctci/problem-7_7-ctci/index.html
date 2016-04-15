@@ -173,110 +173,109 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_7">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Design an algorithm to find the kth number such that the only prime factors are 3, 5, and 7.</p>
 
-<h3>A:</h3>
+<h3 id="a">A:</h3>
+<p>This is a pretty difficult problem, especially if you’re going for the optimal solution.</p>
 
-<p>This is a pretty difficult problem, especially if you&#39;re going for the optimal solution.</p>
-
-<h4>Solution 1</h4>
-
+<h4 id="solution-1">Solution 1</h4>
 <p>Brute force.  We can multiply each number in a list of k-1 numbers by 3, 5, and 7 until we find the smallest number that is not already in the k-1 list.</p>
 
-<h4>Solution 2</h4>
-
+<h4 id="solution-2">Solution 2</h4>
 <p>Each time we add a number to our list, we keep in mind 3, 5, and 7 multiplied by that number into a temporary list.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">getKthMagicNumber</span><span class="o">{</span>
-    <span class="c1">//This helper method will remove and return the smallest value of the queue.</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">removeMin</span><span class="o">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">v</span> <span class="o">:</span><span class="n">q</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">v</span><span class="o">)</span> <span class="n">min</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">q</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">min</span><span class="o">))</span>
-        <span class="o">{</span>
-            <span class="n">q</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">min</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">min</span><span class="o">;</span>
-    <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addProducts</span><span class="o">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span> <span class="n">q</span><span class="o">,</span> <span class="kt">int</span> <span class="n">v</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">3</span><span class="o">);</span>
-        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">5</span><span class="o">);</span>
-        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">*</span><span class="mi">7</span><span class="o">);</span>
-    <span class="o">}</span>
+<p>```java
+public class getKthMagicNumber{
+	//This helper method will remove and return the smallest value of the queue.
+	public static int removeMin(Queue<integer> q)
+	{
+		int min = q.peek();
+		for (Integer v :q)
+		{
+			if (min &gt; v) min = v;
+		}
+		while(q.contains(min))
+		{
+			q.remove(min);
+		}
+		return min;
+	}</integer></p>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getKthMagicNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+<pre><code>public static void addProducts(Queue&lt;Integer q, int v)
+{
+	q.add(v*3);
+	q.add(v*5);
+	q.add(v*7);
+}
 
-        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="n">addProducts</span><span class="o">(</span><span class="n">q</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
-        <span class="o">{</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="n">removeMin</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
-            <span class="n">addProducts</span><span class="o">(</span><span class="n">q</span><span class="o">,</span><span class="n">val</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">val</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
-<h4>Solution 3</h4>
+public static int getKthMagicNumber(int k)
+{
+	if (k &lt; 0) return 0;
 
+	int val = 1;
+	Queue&lt;Integer&gt; q = new LinkedList&lt;Integer&gt;();
+	addProducts(q,1);
+	for(int i = 0; i &lt; k;i++)
+	{
+		val = removeMin(q);
+		addProducts(q,val);
+	}
+	return val;
+} } ```
+</code></pre>
+
+<h4 id="solution-3">Solution 3</h4>
 <p>This is the most optimal.  It involves three queues which took the numbers previously used multiplied by 3,5, and 7 respectively and not using duplicates.  We do this till we get our k numbers.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">getKthMagicNumberFaster</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getKthMagicNumberFaster</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
 
-        <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="c1">// Three queues for each set of multiples</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="c1">// Start with 3^0 * 5^0 * 7^0</span>
-        <span class="n">queue3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<p>```java
+public class getKthMagicNumberFaster
+{
+	public static int getKthMagicNumberFaster(int k)
+	{
+		if (k &lt; 0) return 0;</p>
 
-        <span class="c1">//Iterate through to find</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
-        <span class="o">{</span>
-            <span class="c1">//Each queue&#39;s respective min</span>
-            <span class="kt">int</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">q3</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q3</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-            <span class="kt">int</span> <span class="n">v5</span> <span class="o">=</span> <span class="n">q5</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q5</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-            <span class="kt">int</span> <span class="n">v7</span> <span class="o">=</span> <span class="n">q7</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">q7</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">:</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+<pre><code>	int val = 0;
+	// Three queues for each set of multiples
+	Queue&lt;Integer&gt; q3 = new LinkedList&lt;Integer&gt;();
+	Queue&lt;Integer&gt; q5 = new LinkedList&lt;Integer&gt;();
+	Queue&lt;Integer&gt; q7 = new LinkedList&lt;Integer&gt;();
+	// Start with 3^0 * 5^0 * 7^0
+	queue3.add(1);
+	
+	//Iterate through to find
+	for(int i = 0; i &lt; k;i++)
+	{
+		//Each queue's respective min
+		int v3 = q3.size() &gt; 0 ? q3.peek() : Integer.MAX_VALUE;
+		int v5 = q5.size() &gt; 0 ? q5.peek() : Integer.MAX_VALUE;
+		int v7 = q7.size() &gt; 0 ? q7.peek() : Integer.MAX_VALUE;
+		
+		//Overall min
+		val = Math.min(v3,Math.min(v5,v7));
+		if(val == v3)
+		{
+			q3.remove();
+			q3.add(3*val);
+			q5.add(5*val);
+			q7.add(7*val);
+		}
+		else if (val == v5)
+		{
+			q5.remove();
+			q5.add(5*val);
+			q7.add(7*val);
+		}
+		else if(val == v7)
+		{
+			q7.remove();
+			q7.add(7*val);
+		}
+	}
+	return val;
+} } ```
+</code></pre>
 
-            <span class="c1">//Overall min</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">v3</span><span class="o">,</span><span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">v5</span><span class="o">,</span><span class="n">v7</span><span class="o">));</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v3</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">q3</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
-                <span class="n">q3</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-                <span class="n">q5</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v5</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">q5</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
-                <span class="n">q5</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">val</span> <span class="o">==</span> <span class="n">v7</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">q7</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
-                <span class="n">q7</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">7</span><span class="o">*</span><span class="n">val</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">val</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -319,7 +318,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

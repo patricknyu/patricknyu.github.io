@@ -173,20 +173,21 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_7">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>What about this one?</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="cm">/* This is a comment that extends over several lines</span>
-<span class="cm">because it uses /* and */</span> <span class="n">as</span> <span class="n">its</span> <span class="n">starting</span> <span class="n">and</span> <span class="n">ending</span> <span class="n">delimiters</span> <span class="err">*/</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Does this work?&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3>A:</h3>
 
-<p>No, we have a problem since the /* starts the comment and it gets ended by the first */.  This means that the extra &quot; and */ as its starting and ending delimiters */&quot; will not be interpreted as a comment, giving an error.</p>
+<p><code>c++
+#include &lt;iostream&gt;
+int main() {
+/* This is a comment that extends over several lines
+because it uses /* and */ as its starting and ending delimiters */
+std::cout &lt;&lt; "Does this work?" &lt;&lt; std::endl;
+return 0;
+}
+</code>
+###A:</p>
+
+<p>No, we have a problem since the /* starts the comment and it gets ended by the first */.  This means that the extra “ and */ as its starting and ending delimiters */” will not be interpreted as a comment, giving an error.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -230,7 +231,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -171,15 +171,17 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/%0Amaster/ch1/Question1_1">Github Source</a></p>
+      <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/
+master/ch1/Question1_1">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Are the following definitions valid? Why or why not?</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">const std::string hello = &quot;Hello&quot;;
-const std::string message = hello + &quot;, world&quot; + &quot;!&quot;;
-</code></pre></div>
-<p>These are valid.  The first line is a standard string defenition as a constant.  The second is another string defenition.  It&#39;s a bit confusing since hello is not in paranthesis, but hello is actually a variable we chose in the first line. Also, the second part is one whole string.  The fact that they are constants are also fine since the second definition makes a copy of the first string.</p>
+
+<pre><code>const std::string hello = "Hello";
+const std::string message = hello + ", world" + "!";
+</code></pre>
+
+<p>These are valid.  The first line is a standard string defenition as a constant.  The second is another string defenition.  It’s a bit confusing since hello is not in paranthesis, but hello is actually a variable we chose in the first line. Also, the second part is one whole string.  The fact that they are constants are also fine since the second definition makes a copy of the first string.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -223,7 +225,7 @@ const std::string message = hello + &quot;, world&quot; + &quot;!&quot;;
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

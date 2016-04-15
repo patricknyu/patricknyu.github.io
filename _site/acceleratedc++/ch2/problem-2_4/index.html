@@ -171,91 +171,92 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
-
+      <h3 id="q">Q:</h3>
 <p>The framing program writes the mostly blank lines that separate the borders from the greeting one character at a time. Change the program so that it writes all the spaces needed in a single output expression.</p>
 
-<h3>A:</h3>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &lt;string&gt;</span>
+<h3 id="a">A:</h3>
 
-<span class="c1">// say what standard-library names we use</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+<p>```c++
+#include <iostream>
+#include <string></string></iostream></p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// ask for the person&#39;s name</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please enter your first name: &quot;</span><span class="p">;</span>
+<p>// say what standard-library names we use
+using std::cin;
+using std::endl;
+using std::cout;
+using std::string;</p>
 
-    <span class="c1">// read the name</span>
-    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+<p>int main()
+{
+	// ask for the person’s name
+	cout « “Please enter your first name: “;</p>
 
-    <span class="c1">// build the message that we intend to write</span>
-    <span class="k">const</span> <span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="p">;</span>
+<pre><code>// read the name
+string name;
+cin &gt;&gt; name;
 
-    <span class="c1">// the number of blanks surrounding the greeting const</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me how much padding you want above and below the greeting:&quot;</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">rowpad</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">rowpad</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me how much padding you want to the left and right of the greeting:&quot;</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">colpad</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">colpad</span><span class="p">;</span>
+// build the message that we intend to write
+const string greeting = "Hello, " + name + "!";
 
-    <span class="c1">// the number of rows and columns to write</span>
-    <span class="k">const</span> <span class="kt">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">rowpad</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="n">colpad</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">string</span> <span class="n">horizontalPad</span><span class="p">(</span><span class="n">colpad</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
-    <span class="k">const</span> <span class="n">string</span> <span class="n">verticalPad</span><span class="p">(</span><span class="n">cols</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
-    <span class="c1">// write a blank line to separate the output from the input</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+// the number of blanks surrounding the greeting const
+cout &lt;&lt; "Give me how much padding you want above and below the greeting:";
+int rowpad;
+cin &gt;&gt; rowpad;
+cout &lt;&lt; "Give me how much padding you want to the left and right of the greeting:";
+int colpad;
+cin &gt;&gt; colpad;
 
-    <span class="c1">// write rows rows of output</span>
-    <span class="c1">// invariant: we have written r rows so far</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">rows</span><span class="p">;</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">string</span><span class="o">::</span><span class="n">size_type</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+// the number of rows and columns to write
+const int rows = rowpad * 2 + 3;
+const string::size_type cols = greeting.size() + colpad * 2 + 2;
+const string horizontalPad(colpad,' ');
+const string verticalPad(cols-2,' ');
+// write a blank line to separate the output from the input
+cout &lt;&lt; endl;
 
-        <span class="c1">// invariant: we have written c characters so far in the current row</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">!=</span> <span class="n">cols</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="c1">// is it time to write the greeting?</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">rowpad</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">==</span> <span class="n">colpad</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">greeting</span><span class="p">;</span>
-                <span class="n">c</span> <span class="o">+=</span> <span class="n">greeting</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-            <span class="p">{</span>
-                <span class="c1">// are we on the border?</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">r</span> <span class="o">==</span> <span class="n">rows</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">||</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-                <span class="p">{</span>
-                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*&quot;</span><span class="p">;</span>
-                <span class="o">++</span><span class="n">c</span><span class="p">;</span>
-                <span class="p">}</span>   
-                <span class="k">else</span>
-                <span class="p">{</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">rowpad</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-                    <span class="p">{</span>
-                        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">horizontalPad</span><span class="p">;</span>
-                        <span class="n">c</span> <span class="o">+=</span> <span class="n">horizontalPad</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-                    <span class="p">}</span>
-                    <span class="k">else</span>
-                    <span class="p">{</span>
-                        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">verticalPad</span><span class="p">;</span>
-                        <span class="n">c</span> <span class="o">+=</span> <span class="n">verticalPad</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+// write rows rows of output
+// invariant: we have written r rows so far
+for (int r = 0; r != rows; ++r)
+{
+	string::size_type c = 0;
+
+	// invariant: we have written c characters so far in the current row
+	while (c != cols)
+	{
+		// is it time to write the greeting?
+		if (r == rowpad + 1 &amp;&amp; c == colpad + 1)
+		{
+			cout &lt;&lt; greeting;
+			c += greeting.size();
+		}
+		else
+		{
+			// are we on the border?
+			if (r == 0 || r == rows - 1 ||c == 0 || c == cols - 1)
+			{
+			cout &lt;&lt; "*";
+			++c;
+			}	
+			else
+			{
+				if (r == rowpad + 1)
+				{
+					cout &lt;&lt; horizontalPad;
+					c += horizontalPad.size();
+				}
+				else
+				{
+					cout &lt;&lt; verticalPad;
+					c += verticalPad.size();
+				}
+			}
+		}
+	}
+			cout &lt;&lt; endl;
+}
+			return 0; } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -298,7 +299,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

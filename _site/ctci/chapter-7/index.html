@@ -171,128 +171,138 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h1>Mathematics and Probability</h1>
+      <h1 id="mathematics-and-probability">Mathematics and Probability</h1>
 
-<p>All of my solutions for this chapter and others can be found at my <a href="https://github.com/patricknyu/CtCInterview">github</a>.  A lot of the markdown was written in a github flavored context, so I apologize if there are formatting errors.  I will post the individual file links as well.  Many of my solutions are the book&#39;s solutions, so they are uninteresting.
-I made the poor decision of completing the chapter and then posting this all at once, so it seems kind of cluttered.  I&#39;m going to try to find a way to organize it.</p>
+<p>All of my solutions for this chapter and others can be found at my <a href="https://github.com/patricknyu/CtCInterview">github</a>.  A lot of the markdown was written in a github flavored context, so I apologize if there are formatting errors.  I will post the individual file links as well.  Many of my solutions are the book’s solutions, so they are uninteresting.
+I made the poor decision of completing the chapter and then posting this all at once, so it seems kind of cluttered.  I’m going to try to find a way to organize it.</p>
 
-<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_7/readme.md">Github Source</a></p>
+<p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_7/readme.md">Github Source</a>
+####Intro</p>
 
-<h4>Intro</h4>
+<p>This is just stuff from the chapter intro that I felt the need to rewrite.
+#####Prime Numbers
+* All positive integers can be decomposed into a product of primes.
+* Prime number law states that in order for a number x to divide a number y, all primes in x’s prime factorization must be in y’s factorization.
+* When x = 2<sup>j0</sup> * 3<sup>j1</sup> * 5<sup>j2</sup> * … and x = 2<sup>k0</sup> * 3<sup>k1</sup> * 5<sup>k2</sup> * …
+* gcd(x,y) = 2<sup>min(j0,k0)</sup> * 3<sup>min(j1,k1)</sup> <em>… and lcd(x,y) is the same thing with maxes.
+* if we did gcd * lcd we would get 2<sup>min(j0,k0)</sup> * 2<sup>max(j0,k0)</sup> * … and eventually get gcd</em>lcd = xy</p>
 
-<p>This is just stuff from the chapter intro that I felt the need to rewrite.</p>
+<h5 id="checking-for-primality">Checking for Primality</h5>
+<p><code>java
+boolean primeNaive(int n)
+{
+	if (n&lt;2)
+	{
+		return false;
+	}
+	for (int i = 2;i&lt;n;i++)
+	{
+		if (n % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+</code>
+Here’s a slightly better solution.</p>
 
-<h5>Prime Numbers</h5>
+<p><code>java
+boolean primeSlightlyBetter(int n)
+{
+	if (n&lt;2)
+	{
+		return false;
+	}
+	int sqrt = (int) Math.sqrt(n);
+	for (int i = 2; i &lt;= sqrt;i++)
+	{
+		if (n % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+</code></p>
 
-<ul>
-<li>All positive integers can be decomposed into a product of primes.</li>
-<li>Prime number law states that in order for a number x to divide a number y, all primes in x&#39;s prime factorization must be in y&#39;s factorization.</li>
-<li>When x = 2<sup>j0</sup> * 3<sup>j1</sup> * 5<sup>j2</sup> * ... and x = 2<sup>k0</sup> * 3<sup>k1</sup> * 5<sup>k2</sup> * ...</li>
-<li>gcd(x,y) = 2<sup>min(j0,k0)</sup> * 3<sup>min(j1,k1)</sup> *... and lcd(x,y) is the same thing with maxes.</li>
-<li>if we did gcd * lcd we would get 2<sup>min(j0,k0)</sup> * 2<sup>max(j0,k0)</sup> * ... and eventually get gcd*lcd = xy</li>
-</ul>
+<p>We can see that this solution is faster because it only needs to go up to the square root.  The square root works becuase it’s the 1/2 way point, we don’t have to do the pairs twice.</p>
 
-<h5>Checking for Primality</h5>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">primeNaive</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div>
-<p>Here&#39;s a slightly better solution.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">primeSlightlyBetter</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kt">int</span> <span class="n">sqrt</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">sqrt</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div>
-<p>We can see that this solution is faster because it only needs to go up to the square root.  The square root works becuase it&#39;s the 1/2 way point, we don&#39;t have to do the pairs twice.</p>
-
-<h5>The Sieve of Eratosthenes</h5>
+<h5 id="the-sieve-of-eratosthenes">The Sieve of Eratosthenes</h5>
 
 <p>Starts with a list of numbers up to max.  Then iterates through all the prime numbers and crosses out numbers divisible by the primes.</p>
 
 <p>Here is the implementation they gave.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span><span class="o">[]</span> <span class="nf">sieveOfEratosthenes</span><span class="o">(</span><span class="kt">int</span> <span class="n">max</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="kt">boolean</span><span class="o">[]</span> <span class="n">flags</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
-    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-    <span class="c1">//Set the flags other than 0 and 1 to true</span>
-    <span class="n">init</span><span class="o">(</span><span class="n">flags</span><span class="o">);</span>
-    <span class="kt">int</span> <span class="n">prime</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<p>```java
+boolean[] sieveOfEratosthenes(int max)
+{
+	boolean[] flags = new boolean[max+1];
+	int count = 0;</p>
 
-    <span class="k">while</span> <span class="o">(</span><span class="n">prime</span> <span class="o">&lt;=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">max</span><span class="o">))</span>
-    <span class="o">{</span>
-        <span class="n">crossOff</span><span class="o">(</span><span class="n">flags</span><span class="o">,</span><span class="n">prime</span><span class="o">);</span>
+<pre><code>//Set the flags other than 0 and 1 to true
+init(flags);
+int prime = 2;
 
-        <span class="n">prime</span> <span class="o">=</span> <span class="n">getNextPrime</span><span class="o">(</span><span class="n">flags</span><span class="o">,</span><span class="n">prime</span><span class="o">);</span>
+while (prime &lt;= Math.sqrt(max))
+{
+	crossOff(flags,prime);
 
-        <span class="k">if</span><span class="o">(</span> <span class="n">prime</span> <span class="o">&gt;=</span> <span class="n">flags</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+	prime = getNextPrime(flags,prime);
 
-<span class="kt">void</span> <span class="nf">crossOff</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">prime</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">prime</span><span class="o">*</span><span class="n">prime</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">flags</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">+=</span><span class="n">prime</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">flags</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+	if( prime &gt;= flags.length)
+	{
+		break;
+	}
+} }
+</code></pre>
 
-<span class="kt">int</span> <span class="nf">getNextPrime</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">prime</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">prime</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
-    <span class="k">while</span> <span class="o">(</span><span class="n">next</span> <span class="o">&lt;</span><span class="n">flags</span><span class="o">.</span><span class="na">length</span><span class="o">&amp;&amp;!</span><span class="n">flags</span><span class="o">[</span><span class="n">next</span><span class="o">])</span>
-    <span class="o">{</span>
-        <span class="n">next</span><span class="o">++;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">next</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div>
+<p>void crossOff(boolean[] flags, int prime)
+{
+	for (int i = prime*prime;i&lt;flags.length;i+=prime)
+	{
+		flags[i] = false;
+	}
+}</p>
+
+<p>int getNextPrime(boolean[] flags, int prime)
+{
+	int next = prime+1;
+	while (next &lt;flags.length&amp;&amp;!flags[next])
+	{
+		next++;
+	}
+	return next;
+}
+```</p>
+
 <p>This can be easily optimized.</p>
 
-<h5>Probability</h5>
-
+<h5 id="probability">Probability</h5>
 <p>Just some formulas</p>
 
 <ul>
-<li>P(A &amp; B) = P(B|A)*P(A)</li>
-<li>P(A or B) = P(A) + P(B) - P(A &amp; B)</li>
-<li>If A and B are independent P(A &amp; B) = P(A)*P(B)</li>
-<li>If A and B are mutually exclusive (if one happens, the other cannot happen: P(A or B) = P(A) + P(B), P(A &amp; B) = 0</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>P(A &amp; B) = P(B</td>
+          <td>A)*P(A)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>P(A or B) = P(A) + P(B) - P(A &amp; B)</li>
+  <li>If A and B are independent P(A &amp; B) = P(A)*P(B)</li>
+  <li>If A and B are mutually exclusive (if one happens, the other cannot happen: P(A or B) = P(A) + P(B), P(A &amp; B) = 0</li>
 </ul>
 
-<h5>Things to watch out for</h5>
+<h5 id="things-to-watch-out-for">Things to watch out for</h5>
 
 <ul>
-<li>Precision with floats and doubles</li>
-<li>Don&#39;t assume things are integers</li>
-<li>Do not assume independence</li>
+  <li>Precision with floats and doubles</li>
+  <li>Don’t assume things are integers</li>
+  <li>Do not assume independence</li>
 </ul>
 
       <hr />
@@ -337,7 +347,7 @@ I made the poor decision of completing the chapter and then posting this all at 
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

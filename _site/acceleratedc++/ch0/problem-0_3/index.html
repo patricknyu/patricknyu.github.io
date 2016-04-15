@@ -173,17 +173,18 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_3">Github Source</a></p>
 
-<h3>Q:</h3>
+<h3 id="q">Q:</h3>
+<p>The string literal “\t” represents a tab character; different C++ implementations display tabs in different ways. Experiment with your implementation to learn how it treats tabs.</p>
 
-<p>The string literal &quot;\t&quot; represents a tab character; different C++ implementations display tabs in different ways. Experiment with your implementation to learn how it treats tabs.</p>
+<h3 id="a">A:</h3>
+<p>```c++
+#include <iostream></iostream></p>
 
-<h3>A:</h3>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
+<p>int main(){
+	std::cout«“\t let's see how \t tabs work \t \t \t end”«std::endl;
+}
+```</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\t</span><span class="s"> let</span><span class="se">\&#39;</span><span class="s">s see how </span><span class="se">\t</span><span class="s"> tabs work </span><span class="se">\t</span><span class="s"> </span><span class="se">\t</span><span class="s"> </span><span class="se">\t</span><span class="s"> end&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -226,7 +227,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

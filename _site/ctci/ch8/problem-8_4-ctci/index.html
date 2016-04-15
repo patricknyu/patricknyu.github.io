@@ -173,96 +173,102 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_4">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Design a parking lot using object-oriented principles</p>
 
-<h3>A:</h3>
+<h3 id="a">A:</h3>
+<p>I’m going to think of this as a parking structure with many levels.</p>
 
-<p>I&#39;m going to think of this as a parking structure with many levels.</p>
-
-<p>I&#39;ll represent it as a 2d array.  I need a class for the structure, a class for cars, and a class for spaces.</p>
+<p>I’ll represent it as a 2d array.  I need a class for the structure, a class for cars, and a class for spaces.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_4/Car.java">Car.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">make</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">model</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">year</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">parked</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="n">String</span> <span class="n">ma</span><span class="o">,</span><span class="n">String</span> <span class="n">mo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">p</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">make</span> <span class="o">=</span> <span class="n">ma</span><span class="o">;</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">mo</span><span class="o">;</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-        <span class="n">parked</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class Car
+{
+	private String make;
+	private String model;
+	private int year;
+	public boolean parked;</p>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getYear</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">year</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMake</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">make</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getModel</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">model</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">message</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;This is a &quot;</span> <span class="o">+</span> <span class="n">make</span> <span class="o">+</span> <span class="n">model</span> <span class="o">+</span> <span class="s">&quot; from &quot;</span> <span class="o">+</span> <span class="n">year</span><span class="o">);</span>
-    <span class="o">}</span>
+<pre><code>public Car(String ma,String mo, int y, boolean p)
+{
+	make = ma;
+	model = mo;
+	year = y;
+	parked = p;
+}
 
-<span class="o">}</span>
-</code></pre></div>
+public int getYear()
+{
+	return year;
+}
+public String getMake()
+{
+	return make;
+}
+public String getModel()
+{
+	return model;
+}
+public void message()
+{
+	System.out.println("This is a " + make + model + " from " + year);
+}
+</code></pre>
+
+<p>}
+```</p>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_4/Spot.java">Spot.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Spot</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">hasCar</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">Car</span> <span class="n">currentCar</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Spot</span><span class="o">(</span><span class="n">Car</span> <span class="n">c</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">in</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">currentCar</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-        <span class="n">hasCar</span> <span class="o">=</span> <span class="n">in</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class Spot
+{
+	public boolean hasCar;
+	public Car currentCar;</p>
 
-    <span class="kd">public</span> <span class="n">Car</span> <span class="nf">getCar</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">currentCar</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public Spot(Car c, boolean in)
+{
+	currentCar = c;
+	hasCar = in;
+}
+
+public Car getCar()
+{
+	return currentCar;
+} } ```
+</code></pre>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_4/ParkingStructure.java">ParkingStructure.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ParkingStructure</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">levels</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">spotsPerLevel</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">Car</span><span class="o">[][]</span> <span class="n">struct</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">ParkingStructure</span><span class="o">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">,</span> <span class="kt">int</span> <span class="n">spl</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">struct</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">[</span><span class="n">l</span><span class="o">][</span><span class="n">spl</span><span class="o">];</span>
-    <span class="o">}</span>
-    <span class="c1">//returns false if car is there </span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">insertCar</span><span class="o">(</span><span class="n">Car</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">level</span><span class="o">,</span> <span class="kt">int</span> <span class="n">spot</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">struct</span><span class="o">[</span><span class="n">level</span><span class="o">][</span><span class="n">spot</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">struct</span><span class="o">[</span><span class="n">level</span><span class="o">][</span><span class="n">spot</span><span class="o">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-            <span class="n">c</span><span class="o">.</span><span class="na">message</span><span class="o">();</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">else</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<p>```java
+public class ParkingStructure
+{
+	public int levels;
+	public int spotsPerLevel;
+	public Car[][] struct;</p>
+
+<pre><code>public ParkingStructure(int l, int spl)
+{
+	struct = new Car[l][spl];
+}
+//returns false if car is there	
+public boolean insertCar(Car c, int level, int spot)
+{
+	if(struct[level][spot] == null)
+	{
+		struct[level][spot] = c;
+		c.message();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+} } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -305,7 +311,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

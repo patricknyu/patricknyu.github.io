@@ -173,15 +173,16 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch1/Question1_1">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Are the following definitions valid? Why or why not?</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
-<span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">hello</span> <span class="o">+</span> <span class="s">&quot;, world&quot;</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="p">;</span>
-</code></pre></div>
-<h3>A:</h3>
 
-<p>These are valid.  The first line is a standard string defenition as a constant.  The second is another string defenition.  It&#39;s a bit confusing since hello is not in paranthesis, but hello is actually a variable we chose in the first line. Also, the second part is one whole string.  The fact that they are constants are also fine since the second definition makes a copy of the first string.</p>
+<p><code>c++
+const std::string hello = "Hello";
+const std::string message = hello + ", world" + "!";
+</code></p>
+
+<h3 id="a">A:</h3>
+<p>These are valid.  The first line is a standard string defenition as a constant.  The second is another string defenition.  It’s a bit confusing since hello is not in paranthesis, but hello is actually a variable we chose in the first line. Also, the second part is one whole string.  The fact that they are constants are also fine since the second definition makes a copy of the first string.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -225,7 +226,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

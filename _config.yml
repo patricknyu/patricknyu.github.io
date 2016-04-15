@@ -9,7 +9,6 @@ url:
 
 permalink:   /:categories/:title/
 markdown: kramdown
-markdown: redcarpet
 highlighter: pygments
 sass:
   sass_dir: _sass

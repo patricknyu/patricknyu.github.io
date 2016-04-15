@@ -171,20 +171,22 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
-
+      <h3 id="q">Q:</h3>
 <p>What does the following code do?</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3>A:</h3>
+
+<p><code>c++
+int i = 0;
+while (i &lt; 10)
+{
+	i += 1;
+	std::cout &lt;&lt; i &lt;&lt; std::endl;
+}
+</code>
+###A:</p>
 
 <p>This prints something that will look like.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">1
+
+<pre><code>1
 2
 3
 4
@@ -194,7 +196,9 @@
 8
 9
 10
-</code></pre></div>
+</code></pre>
+
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -237,7 +241,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -173,45 +173,49 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_3">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Given two lines on a Cartesian plane, determine whether the two lines would intersect.</p>
 
-<h3>A:</h3>
-
+<h3 id="a">A:</h3>
 <p>Mathematically, two lines, by the true definition of a line, would always intersect unless their slopes were the same and their y-intercept were different.</p>
 
 <p>The solution provided by the book involves creating a line class.  It seems to be just an example question to show how to ask questions.</p>
 
-<p>I&#39;ll replicate the line class here.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Line</span>
-<span class="o">{</span>
-    <span class="kd">static</span> <span class="kt">double</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.000001</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="n">slope</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">doulbe</span> <span class="n">yintercept</span><span class="o">;</span>
+<p>I’ll replicate the line class here.</p>
 
-    <span class="kd">public</span> <span class="nf">Line</span><span class="o">(</span><span class="kt">double</span> <span class="n">s</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">slope</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-        <span class="n">yintercept</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class Line
+{
+	static double epsilon = 0.000001;
+	public double slope;
+	public doulbe yintercept;</p>
 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&gt;</span><span class="n">epsilon</span> <span class="o">||</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">intercept</span><span class="o">)&lt;</span><span class="n">epsilon</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public Line(double s, double y)
+{
+	slope = s;
+	yintercept = y;
+}
+
+public boolean intersect(Line line2)
+{
+	return Math.abs(slope-line2.slope)&gt;epsilon || Math.abs(yintercept - line2.intercept)&lt;epsilon;
+} } ```
+</code></pre>
+
 <p>Personally, my intercept method would look a little different.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">intersect2</span><span class="o">(</span><span class="n">Line</span> <span class="n">line2</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">slope</span><span class="o">-</span><span class="n">line2</span><span class="o">.</span><span class="na">slope</span><span class="o">)&lt;</span><span class="n">epsilon</span> <span class="o">&amp;&amp;</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">yintercept</span> <span class="o">-</span> <span class="n">line2</span><span class="o">.</span><span class="na">yintercept</span><span class="o">)</span> <span class="o">&gt;</span><span class="n">epsilon</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div>
+
+<p><code>java
+public boolean intersect2(Line line2)
+{
+	if(Math.abs(slope-line2.slope)&lt;epsilon &amp;&amp; Math.abs(yintercept - line2.yintercept) &gt;epsilon)
+	{
+		return true;
+	}
+	return false;
+}
+</code></p>
+
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -254,7 +258,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

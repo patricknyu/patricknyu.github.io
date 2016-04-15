@@ -173,22 +173,22 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch1/Question1_3">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Is the following program valid? If so, what does it do? If not, why not?</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &lt;string&gt;</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="p">{</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;a string&quot;</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">{</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;another string&quot;</span><span class="p">;</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3>A:</h3>
+<p>```c++
+#include <iostream>
+#include <string></string></iostream></p>
 
-<p>This is valid.  We can use the same const strings s when we keep them inside the curly brackets since it deletes it from memory once the curly brackets end.</p>
+<p>int main()
+{
+	{ const std::string s = “a string”; std::cout « s « std::endl; }
+	{ const std::string s = “another string”; std::cout « s « std::endl; }
+	return 0;
+}
+```
+###A:
+This is valid.  We can use the same const strings s when we keep them inside the curly brackets since it deletes it from memory once the curly brackets end.</p>
 
       <hr />
       <footer role="contentinfo">
@@ -232,7 +232,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

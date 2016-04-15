@@ -171,13 +171,11 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
-
+      <h3 id="q">Q:</h3>
 <p>Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.</p>
 
-<h3>A:</h3>
-
-<p>This problem isn&#39;t to interesting to me personally.</p>
+<h3 id="a">A:</h3>
+<p>This problem isn’t to interesting to me personally.</p>
 
 <p>You create an boolean array for rows sized at M and an boolean array for columns sized N.  You iterate through the matrix.  If you encounter a 0, you set the respective values in the boolean arrays to true.</p>
 
@@ -186,37 +184,40 @@
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_7">Java for Problem 1.7</a></p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_7">setZeros.py</a></p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">setCol</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">col</span><span class="p">):</span>
-    <span class="n">numRows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-    <span class="n">numCols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numRows</span><span class="p">):</span>
-        <span class="n">matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="n">matrix</span>
-<span class="k">def</span> <span class="nf">setRows</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">row</span><span class="p">):</span>
-    <span class="n">numRows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-    <span class="n">numCols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numCols</span><span class="p">):</span>
-        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="n">matrix</span>
-<span class="k">def</span> <span class="nf">setZeros</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-    <span class="n">RowZeros</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">))]</span>
-    <span class="n">ColZeros</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-                <span class="n">RowZeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-                <span class="n">ColZeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">RowZeros</span><span class="p">)):</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">RowZeros</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
-            <span class="n">matrix</span> <span class="o">=</span> <span class="n">setCol</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">ColZeros</span><span class="p">)):</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">ColZeros</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
-            <span class="n">matrix</span> <span class="o">=</span> <span class="n">setRows</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">matrix</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">setZeros</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</code></pre></div>
+<p>```python
+def setCol(matrix,col):
+	numRows = len(matrix)
+	numCols = len(matrix[0])
+	for i in range(0,numRows):
+		matrix[col][i] = 0
+	return matrix
+def setRows(matrix,row):
+	numRows = len(matrix)
+	numCols = len(matrix[0])
+	for i in range(0,numCols):
+		matrix[i][row] = 0
+	return matrix
+def setZeros(matrix):
+	RowZeros = [False for i in range(0,len(matrix))]
+	ColZeros = [False for i in range(0,len(matrix[0]))]
+	for i in range(0,len(matrix)):
+		for j in range(0,len(matrix[0])):
+			if(matrix[i][j] == 0):
+				RowZeros[i] = True
+				ColZeros[i] = True
+	for i in range(0,len(RowZeros)):
+		if(RowZeros[i]):
+			matrix = setCol(matrix,i)
+	for i in range(0,len(ColZeros)):
+		if(ColZeros[i]):
+			matrix = setRows(matrix,i)
+	return matrix</p>
+
+<p>a = [[1,2,3],[4,0,6],[7,8,9]]
+print(setZeros(a))
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -259,7 +260,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

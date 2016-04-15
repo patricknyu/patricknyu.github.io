@@ -171,20 +171,22 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_2">Github Source</a></p>
+      <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_2">Github Source</a>
+###Q:
+Write a program that, when run, writes</p>
 
-<h3>Q:</h3>
+<pre><code>```This (") is a quote, and this (\) is a backslash.```
+</code></pre>
 
-<p>Write a program that, when run, writes</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">```This (&quot;) is a quote, and this (\) is a backslash.```
-</code></pre></div>
-<h3>A:</h3>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
+<h3 id="a">A:</h3>
+<p>```c++
+#include <iostream></iostream></p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;This (</span><span class="se">\&quot;</span><span class="s">) is a quote, and this (</span><span class="se">\\</span><span class="s">) is a backslash&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>int main(){
+	std::cout « “This (") is a quote, and this (\) is a backslash” « std::endl;
+}
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -227,7 +229,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

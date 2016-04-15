@@ -171,62 +171,63 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
+      <h3 id="q">Q:</h3>
+<p>Write a method to replace all spaces in a string with ‘%20’.  You many assume that the string has sufficient space at the end of the sting to hold the additional characters, and that you are given the “true” length of the string.</p>
 
-<p>Write a method to replace all spaces in a string with &#39;%20&#39;.  You many assume that the string has sufficient space at the end of the sting to hold the additional characters, and that you are given the &quot;true&quot; length of the string.</p>
-
-<h3>A:</h3>
-
+<h3 id="a">A:</h3>
 <p>This was my first approach.</p>
 
-<p>First I split up my string to a character array.  I added each character to a StringBuilder.  Every time I encountered a space, I inserted a &#39;%20&#39;.</p>
+<p>First I split up my string to a character array.  I added each character to a StringBuilder.  Every time I encountered a space, I inserted a ‘%20’.</p>
 
 <p>When I was using Python, I was able to just put my strings into a list and then join the list.</p>
 
-<p>I also created a more standard implementation where I counted the spaces, created an empty array of the original length plus space length multiplied by 3.  Then I iterated through my character array and inserted &#39;%20&#39; when I encountered spaces.</p>
+<p>I also created a more standard implementation where I counted the spaces, created an empty array of the original length plus space length multiplied by 3.  Then I iterated through my character array and inserted ‘%20’ when I encountered spaces.</p>
 
 <p>Neither of these solutions are in place.  My java solution was in place.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/1_4">Java for Problem 1.4</a></p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_1/Python/1_4">replaceSpace.py</a></p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fileinput</span>
-<span class="k">def</span> <span class="nf">replaceSpace</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">charArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="n">charArrAns</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="mi">32</span><span class="p">):</span>
-            <span class="n">charArrAns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;%20&#39;</span><span class="p">)</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
-            <span class="n">charArrAns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">charArrAns</span><span class="p">)</span>
 
-<span class="c"># Python makes this a bit too easy.  I&#39;ll try to rewrite it so it&#39;s more java like</span>
+<p>```python
+import fileinput
+def replaceSpace(s):
+	charArr = list(s)
+	charArrAns = []
+	for i in charArr:
+		if(ord(i)==32):
+			charArrAns.append(‘%20’)
+		elif(i != ‘\n’):
+			charArrAns.append(i)
+	return ‘‘.join(charArrAns)</p>
 
-<span class="k">def</span> <span class="nf">replaceSpace2</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
-    <span class="n">charArr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-    <span class="n">emptySpaces</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="mi">32</span><span class="p">):</span>
-            <span class="n">emptySpaces</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="n">answerArr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">length</span><span class="o">+</span><span class="n">emptySpaces</span><span class="o">*</span><span class="mi">3</span><span class="p">)]</span>
-    <span class="n">j</span> <span class="o">=</span><span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">charArr</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">==</span><span class="mi">32</span><span class="p">):</span>
-            <span class="n">answerArr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;%&#39;</span>
-            <span class="n">answerArr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;2&#39;</span>
-            <span class="n">answerArr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span>
-            <span class="n">j</span><span class="o">+=</span><span class="mi">3</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
-            <span class="n">answerArr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">answerArr</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">replaceSpace</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">replaceSpace2</span><span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div>
+<h1 id="python-makes-this-a-bit-too-easy--ill-try-to-rewrite-it-so-its-more-java-like">Python makes this a bit too easy.  I’ll try to rewrite it so it’s more java like</h1>
+
+<p>def replaceSpace2(s,length):
+	charArr = list(s)
+	emptySpaces = 0
+	for i in charArr:
+		if(ord(i)==32):
+			emptySpaces+=1
+	answerArr = [’’ for i in range(0,length+emptySpaces*3)]
+	j =0
+	for i in charArr:
+		if(ord(i)==32):
+			answerArr[j] = ‘%’
+			answerArr[j+1] = ‘2’
+			answerArr[j+2] = ‘0’
+			j+=3
+		elif(i !=’\n’):
+			answerArr[j] = i
+			j+=1
+	return ‘‘.join(answerArr)
+if <strong>name</strong> == “<strong>main</strong>”:
+	for line in fileinput.input():
+		print(line)
+		print(replaceSpace(line))
+		print(replaceSpace2(line,len(str(line))-1))
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -269,7 +270,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

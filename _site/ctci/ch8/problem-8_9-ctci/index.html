@@ -173,154 +173,158 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_9">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Explain the data structures and algorithms that you would use to design an in-memory file system. Illustrate with an example in code where possible.</p>
 
-<h3>A:</h3>
-
+<h3 id="a">A:</h3>
 <p>Basically, we need a file class and a directory class where one directory class can contain other directory classes.</p>
 
 <p>The given solution uses a class called Entry which we inherit properties from.</p>
 
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_9/Directory.java">Directory.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Directory</span> <span class="kd">extends</span> <span class="n">Entry</span>
-<span class="o">{</span>
-    <span class="kd">protected</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;</span> <span class="n">contents</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Directory</span><span class="o">(</span><span class="n">String</span> <span class="n">n</span><span class="o">,</span> <span class="n">Directory</span> <span class="n">p</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">n</span><span class="o">,</span><span class="n">p</span><span class="o">);</span>
-        <span class="n">contents</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;();</span>
-    <span class="o">}</span>
+<p>```java
+import java.util.ArrayList;
+public class Directory extends Entry
+{
+	protected ArrayList<entry> contents;</entry></p>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="c1">//Must do this since directories can contain directories.</span>
-        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Entry</span> <span class="nl">e:</span> <span class="n">contents</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">size</span> <span class="o">+=</span><span class="n">e</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numberOfFiles</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Entry</span> <span class="n">e</span> <span class="o">:</span> <span class="n">contents</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">e</span> <span class="k">instanceof</span> <span class="n">Directory</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">count</span><span class="o">++;</span>
-                <span class="n">Directory</span> <span class="n">d</span> <span class="o">=</span> <span class="o">(</span><span class="n">Directory</span><span class="o">)</span> <span class="n">e</span><span class="o">;</span>
-                <span class="n">count</span><span class="o">+=</span><span class="n">d</span><span class="o">.</span><span class="na">numberOfFiles</span><span class="o">();</span>
-            <span class="o">}</span>
-            <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">e</span> <span class="k">instanceof</span> <span class="n">File</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">count</span><span class="o">++;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">deleteEntry</span><span class="o">(</span><span class="n">Entry</span> <span class="n">e</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">contents</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEntry</span><span class="o">(</span><span class="n">Entry</span> <span class="n">e</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">contents</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">protected</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;</span> <span class="nf">getContents</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">contents</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public Directory(String n, Directory p)
+{
+	super(n,p);
+	contents = new ArrayList&lt;Entry&gt;();
+}
+
+public int size()
+{
+	//Must do this since directories can contain directories.
+	int size = 0;
+	for (Entry e: contents)
+	{
+		size +=e.size();
+	}
+	return size;
+}
+public int numberOfFiles()
+{
+	int count = 0;
+	for (Entry e : contents)
+	{
+		if (e instanceof Directory)
+		{
+			count++;
+			Directory d = (Directory) e;
+			count+=d.numberOfFiles();
+		}
+		else if(e instanceof File)
+		{
+			count++;
+		}
+	}
+	return count;
+}
+public boolean deleteEntry(Entry e)
+{
+	return contents.remove(e);
+}
+public void addEntry(Entry e)
+{
+	contents.add(e);
+}
+protected ArrayList&lt;Entry&gt; getContents()
+{
+	return contents;
+} } ```
+</code></pre>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_9/Entry.java">Entry.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Entry</span>
-<span class="o">{</span>
-    <span class="kd">protected</span> <span class="n">Directory</span> <span class="n">parent</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="kt">long</span> <span class="n">created</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="kt">long</span> <span class="n">lastUpdated</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="kt">long</span> <span class="n">lastAccessed</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Entry</span><span class="o">(</span><span class="n">String</span> <span class="n">n</span><span class="o">,</span> <span class="n">Directory</span> <span class="n">p</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
-        <span class="n">parent</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
-        <span class="n">created</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-        <span class="n">lastUpdated</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-        <span class="n">lastAccessed</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-    <span class="o">}</span>
+<p>```java
+public abstract class Entry
+{
+	protected Directory parent;
+	protected long created;
+	protected long lastUpdated;
+	protected long lastAccessed;
+	protected String name;</p>
 
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">delete</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">parent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="na">deleteEntry</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFullPath</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">parent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="na">getFullPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
+<pre><code>public Entry(String n, Directory p)
+{
+	name = n;
+	parent = p;
+	created = System.currentTimeMillis();
+	lastUpdated = System.currentTimeMillis();
+	lastAccessed = System.currentTimeMillis();
+}
 
-    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getCreationTime</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">created</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getLastUpdatedTime</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">lastUpdated</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getLastAccessedTime</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">lastAccessed</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">changeName</span><span class="o">(</span><span class="n">String</span> <span class="n">n</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+public boolean delete()
+{
+	if(parent == null)
+	{
+		return false;
+	}
+	return parent.deleteEntry(this);
+}
+public abstract int size();
+public String getFullPath()
+{
+	if(parent == null)
+	{
+		return name;
+	}
+	return parent.getFullPath() + "/" + name;
+}
+
+public long getCreationTime()
+{
+	return created;
+}
+public long getLastUpdatedTime()
+{
+	return lastUpdated;
+}
+public long getLastAccessedTime()
+{
+	return lastAccessed;
+}
+public void changeName(String n)
+{
+	name = n;
+}
+public String getName()
+{
+	return name;
+} } ```
+</code></pre>
+
 <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/8_8/File.java">File.java</a></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">File</span> <span class="kd">extends</span> <span class="n">Entry</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">File</span><span class="o">(</span><span class="n">String</span> <span class="n">n</span><span class="o">,</span><span class="n">Directory</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">n</span><span class="o">,</span><span class="n">p</span><span class="o">);</span>
-        <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-    <span class="o">}</span>
+<p>```java
+public class File extends Entry
+{
+	private String content;
+	private int size;</p>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">size</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getContent</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">content</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContents</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public File(String n,Directory p, int s)
+{
+	super(n,p);
+	size = s;
+}
+
+public int size()
+{
+	return size;
+}
+public String getContent()
+{
+	return content;
+}
+public void setContents(String c)
+{
+	content = c;
+} } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -363,7 +367,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

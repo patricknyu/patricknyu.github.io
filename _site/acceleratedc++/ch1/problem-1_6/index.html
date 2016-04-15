@@ -173,24 +173,27 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch1/Question1_6">Github Source</a></p>
 
-<h3>Q:</h3>
+<h3 id="q">Q:</h3>
 
 <p>What does the following program do if, when it asks you for input, you type two names (for example, Samuel Beckett)? Predict the behavior before running the program, then try it.</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt; #include &lt;string&gt;</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;What is your name? &quot;</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span><span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;And what is yours? &quot;</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;; nice to meet you too!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div>
-<h3>A:</h3>
 
-<p>First it outputs &quot;What is your name? &quot;.  If you put in Samule Beckett, then it will ste name to Samuel and keep Beckett in the buffer.  Then it returns &quot;Hello, Samuel&quot;.  Then it says &quot;And what is yours?&quot;.  The buffer still has a word so we don&#39;t even get to put in a word.  It outputs &quot;Hello, Samuel; nice to meet you too!&quot;</p>
+<p><code>c++
+#include &lt;iostream&gt; #include &lt;string&gt;
+int main()
+{
+	std::cout &lt;&lt; "What is your name? ";
+	std::string name;
+	std::cin &gt;&gt; name;
+	std::cout &lt;&lt; "Hello, " &lt;&lt; name&lt;&lt; std::endl &lt;&lt; "And what is yours? ";
+	std::cin &gt;&gt; name;
+	std::cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "; nice to meet you too!" &lt;&lt; std::endl;
+	return 0; 
+}
+</code></p>
+
+<h3 id="a">A:</h3>
+
+<p>First it outputs “What is your name? “.  If you put in Samule Beckett, then it will ste name to Samuel and keep Beckett in the buffer.  Then it returns “Hello, Samuel”.  Then it says “And what is yours?”.  The buffer still has a word so we don’t even get to put in a word.  It outputs “Hello, Samuel; nice to meet you too!”</p>
 
       <hr />
       <footer role="contentinfo">
@@ -234,7 +237,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

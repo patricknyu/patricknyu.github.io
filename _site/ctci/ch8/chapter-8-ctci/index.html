@@ -173,29 +173,29 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/blob/master/ch_8/readme.md">Github Source</a></p>
 
-<h2>Object-Orientated Design</h2>
+<h2 id="object-orientated-design">Object-Orientated Design</h2>
 
-<h4>Steps to Solve</h4>
+<h4 id="steps-to-solve">Steps to Solve</h4>
 
 <ol>
-<li><p>Handle Ambiguity</p>
-
-<ul>
-<li>OOD questions are intentionally very vague.  It&#39;s importatnt to ask questions and not make assumptions.</li>
-<li>We have to ask who, what when, where, why, and how</li>
-</ul></li>
-<li><p>Define the Core Objects</p>
-
-<ul>
-<li>We need to know know what the core objects are.</li>
-<li>My favorite example in OOD is the restaurant example.  Core objects in this example could be Employee, Food, Customer.</li>
-</ul></li>
-<li><p>Analyze Relationships</p>
-
-<ul>
-<li>We need to notice which objects are members of other objects.  Do we have inheritance properties?</li>
-<li>Do we have many to many or one to many relationship.</li>
-</ul></li>
+  <li>Handle Ambiguity
+    <ul>
+      <li>OOD questions are intentionally very vague.  It’s importatnt to ask questions and not make assumptions.</li>
+      <li>We have to ask who, what when, where, why, and how</li>
+    </ul>
+  </li>
+  <li>Define the Core Objects
+    <ul>
+      <li>We need to know know what the core objects are.</li>
+      <li>My favorite example in OOD is the restaurant example.  Core objects in this example could be Employee, Food, Customer.</li>
+    </ul>
+  </li>
+  <li>Analyze Relationships
+    <ul>
+      <li>We need to notice which objects are members of other objects.  Do we have inheritance properties?</li>
+      <li>Do we have many to many or one to many relationship.</li>
+    </ul>
+  </li>
 </ol>
 
 <p>Example 1: An example of a one to many relationship is a when we are describing families.  A Mother may have many biological children, however a child can only have one biological mother.</p>
@@ -203,88 +203,91 @@
 <p>Example 2: An example of a many to many relationship is when we describe books.  A book can be written by many authors as a joint effort.  In a similar light, a author can write many books.</p>
 
 <ol>
-<li>Investigate Actions
-
-<ul>
-<li>Consider the actions that the objects can take.  You need to double check your program here and ensure you didn&#39;t miss anything.</li>
-</ul></li>
+  <li>Investigate Actions
+    <ul>
+      <li>Consider the actions that the objects can take.  You need to double check your program here and ensure you didn’t miss anything.</li>
+    </ul>
+  </li>
 </ol>
 
-<h4>Singleton Class</h4>
-
+<h4 id="singleton-class">Singleton Class</h4>
 <ul>
-<li>This ensures that a class has only one instance and ensures access to the instance through the application.</li>
-<li>It is useful in cases where you have a global object with only one instance.</li>
-<li>The example below implements the Restaurant class so that there is only one instance of Restaurant allowed.</li>
+  <li>This ensures that a class has only one instance and ensures access to the instance through the application.</li>
+  <li>It is useful in cases where you have a global object with only one instance.</li>
+  <li>The example below implements the Restaurant class so that there is only one instance of Restaurant allowed.</li>
 </ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Restaurant</span>
-<span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">restaurant</span> <span class="n">_instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="kd">protected</span> <span class="nf">Restaurant</span><span class="o">()</span>
-    <span class="o">{</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Restaurant</span> <span class="nf">getInstance</span><span class="o">()</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Restaurant</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">_instance</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
-<h4>Factory Method</h4>
 
+<p><code>java
+public class Restaurant
+{
+	private static restaurant _instance = null;
+	protected Restaurant()
+	{
+	}
+	public static Restaurant getInstance()
+	{
+		if(_instance == null)
+		{
+			_instance = new Restaurant();
+		}
+		return _instance;
+	}
+}
+</code></p>
+
+<h4 id="factory-method">Factory Method</h4>
 <ul>
-<li>Offers an interface for creating an instance of a class.</li>
-<li>The sublcasses decide which class to instantiate.</li>
-<li>You can do this with the creator class being abstract, or you could have the creator class be a concrete class that provides an implementation.</li>
-<li>The below example takes a paramter which represents which class we want to instantiate.</li>
+  <li>Offers an interface for creating an instance of a class.</li>
+  <li>The sublcasses decide which class to instantiate.</li>
+  <li>You can do this with the creator class being abstract, or you could have the creator class be a concrete class that provides an implementation.</li>
+  <li>The below example takes a paramter which represents which class we want to instantiate.</li>
 </ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CardGame</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">CardGame</span> <span class="nf">createCardGame</span><span class="o">(</span><span class="n">GameType</span> <span class="n">type</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">type</span><span class="o">==</span><span class="n">GameType</span><span class="o">.</span><span class="na">Poker</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nf">PokerGame</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">type</span> <span class="o">==</span> <span class="n">GameType</span><span class="o">.</span><span class="na">BlackJack</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nf">BlackJackGame</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
-<h4>4 Pillars of OOD</h4>
 
+<p><code>java
+public class CardGame
+{
+	public static CardGame createCardGame(GameType type)
+	{
+		if(type==GameType.Poker)
+		{
+			return new PokerGame();
+		}
+		else if (type == GameType.BlackJack)
+		{
+			return new BlackJackGame();
+		}
+		return null;
+	}
+}
+</code></p>
+
+<h4 id="pillars-of-ood">4 Pillars of OOD</h4>
 <ol>
-<li><p>Abstraction</p>
-
-<ul>
-<li>The basic idea behind abstraction is to hide the complexities of your program.  Someone using your design doesn&#39;t necessarily need to know all the nitty gritty details behind it.</li>
-<li>Example : If you have a car, you know that you need keys, how to press the gas pedal, and how to steer.  However, you probably don&#39;t need to know how the engine works with the cylinders and the gear change.</li>
-</ul></li>
-<li><p>Encapsulation</p>
-
-<ul>
-<li>The idea for this is security.  You can make some of the variables in your design private, allowing to keep some data safe.</li>
-<li>An example of this is a backpack.  You put your school stuff inside of it and nobody can access it other than you.</li>
-</ul></li>
-<li><p>Polymorphism</p>
-
-<ul>
-<li>This is the ability for an object to take many forms.</li>
-<li>Method overloading goes here.</li>
-<li>This means that we can have objects with the same name that are different since they have different parameters.</li>
-</ul></li>
-<li><p>Inheritance</p>
-
-<ul>
-<li>This is the ability for an object to inherity the qualities of another object.</li>
-<li>Example : We have a cat object which has properties <code>has_claws = true;</code> and <code>legs = 4;</code>.  Lion can inherit cat at keep those properties.  Panther can also inherit cat and keep those qualities too.</li>
-</ul></li>
+  <li>Abstraction
+    <ul>
+      <li>The basic idea behind abstraction is to hide the complexities of your program.  Someone using your design doesn’t necessarily need to know all the nitty gritty details behind it.</li>
+      <li>Example : If you have a car, you know that you need keys, how to press the gas pedal, and how to steer.  However, you probably don’t need to know how the engine works with the cylinders and the gear change.</li>
+    </ul>
+  </li>
+  <li>Encapsulation
+    <ul>
+      <li>The idea for this is security.  You can make some of the variables in your design private, allowing to keep some data safe.</li>
+      <li>An example of this is a backpack.  You put your school stuff inside of it and nobody can access it other than you.</li>
+    </ul>
+  </li>
+  <li>Polymorphism
+    <ul>
+      <li>This is the ability for an object to take many forms.</li>
+      <li>Method overloading goes here.</li>
+      <li>This means that we can have objects with the same name that are different since they have different parameters.</li>
+    </ul>
+  </li>
+  <li>Inheritance
+    <ul>
+      <li>This is the ability for an object to inherity the qualities of another object.</li>
+      <li>Example : We have a cat object which has properties <code>has_claws = true;</code> and <code>legs = 4;</code>.  Lion can inherit cat at keep those properties.  Panther can also inherit cat and keep those qualities too.</li>
+    </ul>
+  </li>
 </ol>
 
       <hr />
@@ -329,7 +332,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

@@ -173,19 +173,20 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/AcceleratedCPlusPlus/tree/master/ch0/Question0_8">Github Source</a></p>
 
-<h3>Q:</h3>
+<h3 id="q">Q:</h3>
+<p>…and this one?</p>
 
-<p>...and this one?</p>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt; int main()</span>
-<span class="p">{</span>
-<span class="c1">// This is a comment that extends over several lines</span>
-<span class="c1">// by using // at the beginning of each line instead of using /* // or */ to delimit comments.</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Does this work?&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
-<span class="p">}</span>
-</code></pre></div>
-<h3>A:</h3>
+<p><code>c++
+#include &lt;iostream&gt; int main()
+{
+// This is a comment that extends over several lines
+// by using // at the beginning of each line instead of using /* // or */ to delimit comments.
+std::cout &lt;&lt; "Does this work?" &lt;&lt; std::endl;
+return 0; 
+}
+</code></p>
 
+<h3 id="a">A:</h3>
 <p>This is valid.  All the stuff for the entire line after each // starts is a comment, so none if it is interpreted.</p>
 
 <p>The rest of the program is valid.</p>
@@ -232,7 +233,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

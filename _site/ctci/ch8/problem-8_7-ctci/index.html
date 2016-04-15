@@ -173,130 +173,132 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_8/8_7">Github Source</a></p>
 
-<h1>8_7</h1>
+<h1 id="section">8_7</h1>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Explain how you would design a chat server.  In particular, provide details about the various background components, classes, and methods.  What would be the hardest problems to solve?</p>
 
-<h3>A:</h3>
+<h3 id="a">A:</h3>
+<p>Well this is a extremely difficult solution.  I’m going to change pace and implement it in python.  This will be fun.</p>
 
-<p>Well this is a extremely difficult solution.  I&#39;m going to change pace and implement it in python.  This will be fun.</p>
+<p>I will need a UserMaster class which controls all the core user actions.  Then I’ll have a User class which will have user actions.  I’ll also have a conversation, groupchat, privatechat, message, addRequest, UserStatus, UserStatusType, and RequestStatus.</p>
 
-<p>I will need a UserMaster class which controls all the core user actions.  Then I&#39;ll have a User class which will have user actions.  I&#39;ll also have a conversation, groupchat, privatechat, message, addRequest, UserStatus, UserStatusType, and RequestStatus.</p>
+<p>I decided to write this in python.  Poorly…I need go go back and fix this</p>
 
-<p>I decided to write this in python.  Poorly...I need go go back and fix this</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">UserMaster</span><span class="p">:</span>
-    <span class="c">#look into this</span>
-    <span class="k">def</span> <span class="nf">_init_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<p>```python
+class UserMaster:
+	#look into this
+	def <em>init</em>(self):</p>
 
-    <span class="k">def</span> <span class="nf">addUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fromUser</span><span class="p">,</span><span class="n">s</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">toUser</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">toAccountName</span><span class="p">)</span>
-        <span class="n">req</span> <span class="o">=</span> <span class="n">AddRequest</span><span class="p">(</span><span class="n">fromUser</span><span class="p">,</span><span class="n">toUser</span><span class="p">,</span><span class="n">new</span> <span class="n">Date</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">toUser</span><span class="o">.</span><span class="n">recivedAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fromUser</span><span class="o">.</span><span class="n">sentAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<pre><code>def addUser(self,fromUser,s):
+	self.toUser = usersByAccountName.get(toAccountName)
+	req = AddRequest(fromUser,toUser,new Date())
+	self.toUser.recivedAddRequest(req)
+	self.fromUser.sentAddRequest(req)
 
-    <span class="k">def</span> <span class="nf">approveAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
-        <span class="n">req</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">RequestStatus</span><span class="o">.</span><span class="n">Accepted</span>
-        <span class="bp">self</span><span class="o">.</span><span class="kn">from</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">from</span><span class="o">.</span><span class="n">addContact</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">addContact</span><span class="p">(</span><span class="n">from</span><span class="p">)</span>
+def approveAddRequest(self,req):
+	req.status = RequestStatus.Accepted
+	self.from = req.getFromUser()
+	self.to = req.getToUser()
+	self.from.addContact(to)
+	self.to.addContact(from)
 
-    <span class="k">def</span> <span class="nf">rejectAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
-        <span class="n">req</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">RequestStatus</span><span class="o">.</span><span class="n">Rejected</span>
-        <span class="bp">self</span><span class="o">.</span><span class="kn">from</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">from</span><span class="o">.</span><span class="n">removeAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">removeAddRequest</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+def rejectAddRequest(self,req):
+	req.status = RequestStatus.Rejected
+	self.from = req.getFromUser()
+	self.to = req.getToUser()
+	self.from.removeAddRequest(req)
+	self.to.removeAddRequest(req)
 
-    <span class="k">def</span> <span class="nf">userSignedOn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">accountName</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="c">#needs changing</span>
-            <span class="n">user</span><span class="o">.</span><span class="n">setStatus</span><span class="p">(</span><span class="n">UserStatus</span><span class="p">(</span><span class="n">UserStatusType</span><span class="o">.</span><span class="n">Available</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">onlineUsers</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">user</span><span class="p">)</span>
+def userSignedOn(self,accountName):
+	user = usersByAccountName.get(accountName)
+	if (user is not None):
+		#needs changing
+		user.setStatus(UserStatus(UserStatusType.Available))
+		self.onlineUsers.put(user.getId(),user)
 
-    <span class="k">def</span> <span class="nf">userSignedOff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="n">usersByAccountName</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">accountName</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="c">#same here</span>
-            <span class="n">user</span><span class="o">.</span><span class="n">setSTatus</span><span class="p">(</span><span class="n">new</span> <span class="n">UserStatus</span><span class="p">(</span><span class="n">UserStatusType</span><span class="o">.</span><span class="n">Offline</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">onlineUsers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getID</span><span class="p">())</span>
+def userSignedOff(self,accountName):
+	user = usersByAccountName.get(accountName)
+	if (user is not None):
+		#same here
+		user.setSTatus(new UserStatus(UserStatusType.Offline))
+		self.onlineUsers.remove(user.getID())
+</code></pre>
 
-<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
-    <span class="c">#of course we still need to look into this</span>
-    <span class="k">def</span> <span class="nf">_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">accountName</span><span class="p">,</span> <span class="n">fullName</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">accontName</span> <span class="o">=</span> <span class="n">accoutName</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fullName</span> <span class="o">=</span> <span class="n">fullName</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+<p>class User:
+	#of course we still need to look into this
+	def _init(self, id, accountName, fullName):
+		self.accontName = accoutName
+		self.fullName = fullName
+		self.id = id</p>
 
-    <span class="k">def</span> <span class="nf">sendMessageToUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">toUser</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-        <span class="n">chat</span> <span class="o">=</span> <span class="n">privateChats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">toUser</span><span class="o">.</span><span class="n">getId</span><span class="p">())</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">chat</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="n">chat</span> <span class="o">=</span> <span class="n">PrivateChat</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="n">toUser</span><span class="p">)</span>
-            <span class="n">privateChats</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">toUser</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">chat</span><span class="p">)</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">Date</span><span class="p">())</span>
-        <span class="k">return</span> <span class="n">chat</span><span class="o">.</span><span class="n">addMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<pre><code>def sendMessageToUser(self,toUser, content):
+	chat = privateChats.get(toUser.getId())
+	if (chat is None):
+		chat = PrivateChat(this,toUser)
+		privateChats.put(toUser.getId(),chat)
+	message = Message(content,Date())
+	return chat.addMessage(message)
 
-    <span class="k">def</span> <span class="nf">sendMessageToGroupChat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">groupId</span><span class="p">,</span><span class="n">content</span><span class="p">):</span>
-        <span class="n">chat</span> <span class="o">=</span> <span class="n">groupChats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">groupId</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">chat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="n">message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">Date</span><span class="p">())</span>
-            <span class="k">return</span> <span class="n">chat</span><span class="o">.</span><span class="n">addMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">false</span>
+def sendMessageToGroupChat(self, groupId,content):
+	chat = groupChats.get(groupId)
+	if (chat is not None):
+		message = Message(content,Date())
+		return chat.addMessage(message)
+	return false
 
-    <span class="k">def</span> <span class="nf">setStatus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">status</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+def setStatus(self,status):
+	self.status = status
 
-    <span class="k">def</span> <span class="nf">getStatus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span>
+def getStatus(self):
+	return self.status
 
-    <span class="k">def</span> <span class="nf">addContact</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
-        <span class="c">#If we already have this user</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">contacts</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">())):</span>
-            <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">contacts</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">user</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">True</span>
+def addContact(user):
+	#If we already have this user
+	if (contacts.containsKey(user.getId())):
+		return False
+	else:
+		contacts.put(user.getId(),user)
+		return True
 
-    <span class="k">def</span> <span class="nf">receivedAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
-        <span class="n">senderId</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span>
-        <span class="k">if</span><span class="p">(</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">senderId</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">senderId</span><span class="p">,</span><span class="n">req</span><span class="p">)</span>
+def receivedAddRequest(self,req):
+	senderId = req.getFromUser().getId()
+	if( not self.receivedAddRequests.containsKey(senderId):
+		self.receivedAddRequests.put(senderId,req)
 
-    <span class="k">def</span> <span class="nf">sentAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
-        <span class="n">receiverId</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span>
-        <span class="k">if</span><span class="p">(</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">sentAddRequest</span><span class="o">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">receiverId</span><span class="p">)):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">sentAddRequests</span><span class="o">.</span><span class="n">pu</span><span class="p">(</span><span class="n">receiverId</span><span class="p">,</span><span class="n">req</span><span class="p">)</span>
+def sentAddRequest(self,req):
+	receiverId = req.getFromUser().getId()
+	if( not self.sentAddRequest.containsKey(receiverId)):
+		self.sentAddRequests.pu(receiverId,req)
 
-    <span class="k">def</span> <span class="nf">removeAddRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">req</span><span class="p">):</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">getToUser</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">receivedAddRequests</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-        <span class="k">elif</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">getFromUser</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="p">):</span>
-            <span class="n">sentAddRequests</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+def removeAddRequest(self,req):
+	if(req.getToUser() == self):
+		self.receivedAddRequests.remove(req)
+	elif(req.getFromUser() == self):
+		sentAddRequests.remove(req)
 
-    <span class="k">def</span> <span class="nf">requestAddUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">):</span>
-        <span class="c">#look into this.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">UserMaster</span><span class="o">.</span><span class="n">getInstance</span><span class="p">()</span><span class="o">.</span><span class="n">addUser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accountName</span><span class="p">)</span>
+def requestAddUser(self,accountName):
+	#look into this.
+	self.UserMaster.getInstance().addUser(self,accountName)
 
-    <span class="k">def</span> <span class="nf">addConversation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conversation</span><span class="p">):</span>
-        <span class="c">#there is a problem here</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">conversation</span><span class="p">)</span> <span class="o">==</span> <span class="n">PrivateChat</span><span class="p">):</span>
-            <span class="n">otherUser</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">getOtherParticipant</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">privateChats</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">otherUser</span><span class="o">.</span><span class="n">getId</span><span class="p">(),</span><span class="n">conversation</span><span class="p">)</span>
-        <span class="k">elif</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">converation</span><span class="p">)</span> <span class="o">==</span> <span class="n">GroupChat</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">groupChats</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">converation</span><span class="p">)</span>
+def addConversation(self,conversation):
+	#there is a problem here
+	if(type(conversation) == PrivateChat):
+		otherUser = conversation.getOtherParticipant(self)
+		self.privateChats.put(otherUser.getId(),conversation)
+	elif(type(converation) == GroupChat):
+		self.groupChats.add(converation)
 
-    <span class="k">def</span> <span class="nf">getId</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">;</span>
+def getId(self):
+	return self.id;
 
-    <span class="k">def</span> <span class="nf">getAccountName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">accountName</span>
+def getAccountName(self):
+	return self.accountName
 
-    <span class="k">def</span> <span class="nf">getFullName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fullName</span>
-</code></pre></div>
+def getFullName(self):
+	return self.fullName ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -339,7 +341,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

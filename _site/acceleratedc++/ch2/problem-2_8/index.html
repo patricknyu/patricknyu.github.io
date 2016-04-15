@@ -171,27 +171,29 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
-
+      <h3 id="q">Q:</h3>
 <p>Write a program to generate the product of the numbers in the range [1, 10).</p>
 
-<h3>A:</h3>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include &lt;iostream&gt;</span>
+<h3 id="a">A:</h3>
 
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<p>```c++
+#include <iostream></iostream></p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;This is the product of the numbers in the range [1,10)&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">prod</span>  <span class="o">=</span> <span class="n">prod</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">prod</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>using std::cout;
+using std::endl;</p>
+
+<p>int main()
+{
+	cout«“This is the product of the numbers in the range [1,10)”«endl;
+	int prod = 1;
+	for (int i = 1;i&lt;10;++i)
+	{
+		prod  = prod*i;
+	}
+	cout « prod « endl;
+}
+```</p>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -234,7 +236,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

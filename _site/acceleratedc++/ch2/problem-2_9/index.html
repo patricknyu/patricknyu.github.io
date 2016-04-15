@@ -171,39 +171,40 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3>Q:</h3>
-
+      <h3 id="q">Q:</h3>
 <p>Write a program that asks the user to enter two numbers and tells the user which number is larger than the other.</p>
 
-<h3>A:</h3>
-<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="cp">#include&lt;iostream&gt;</span>
+<h3 id="a">A:</h3>
 
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">;</span>
+<p>```c++
+#include<iostream></iostream></p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me a first number: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">first</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">first</span><span class="p">;</span>
+<p>using std::cout;
+using std::endl;
+using std::cin;</p>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Give me a second number: &quot;</span>  <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">second</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">second</span><span class="p">;</span>
+<p>int main()
+{
+	cout « “Give me a first number: “ « endl;
+	int first;
+	cin » first;</p>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The bigger number is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">first</span> <span class="o">&gt;</span> <span class="n">second</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre><code>cout &lt;&lt; "Give me a second number: "  &lt;&lt; endl;
+int second;
+cin &gt;&gt; second;
+
+cout &lt;&lt; "The bigger number is: " &lt;&lt; endl;
+if(first &gt; second)
+{
+	cout &lt;&lt; first &lt;&lt; endl;
+}
+else
+{
+	cout &lt;&lt; second &lt;&lt; endl;
+}
+return 0; } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -246,7 +247,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->

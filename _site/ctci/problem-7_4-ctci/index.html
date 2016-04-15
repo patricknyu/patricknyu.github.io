@@ -173,106 +173,106 @@
     <div class="article-wrap">
       <p><a href="https://github.com/patricknyu/CtCInterview/tree/master/ch_7/7_4">Github Source</a></p>
 
-<h3>Q:</h3>
-
+<h3 id="q">Q:</h3>
 <p>Write methods to implement the multiply, subtact, and divide operations for the integers.  Use only the add operator.</p>
 
-<h3>A:</h3>
-
+<h3 id="a">A:</h3>
 <p>This is actually more difficult than I originally thought!</p>
 
 <p>I included some basic tests that I did.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">operations</span>
-<span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span><span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="nf">multiply</span><span class="o">(</span><span class="n">b</span><span class="o">,</span><span class="n">a</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">sum</span> <span class="o">+=</span><span class="n">a</span><span class="o">;</span>
-            <span class="n">count</span><span class="o">++;</span>
-        <span class="o">}</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">sum</span> <span class="o">=</span> <span class="n">negate</span><span class="o">(</span><span class="n">sum</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="c1">//Subtract will require a negate helper method</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">negate</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">neg</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">d</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">else</span>
-        <span class="o">{</span>
-            <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">a</span> <span class="o">!=</span><span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">neg</span> <span class="o">+=</span><span class="n">d</span><span class="o">;</span>
-            <span class="n">a</span> <span class="o">+=</span><span class="n">d</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">neg</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">subtract</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">negate</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="c1">//This division will be a/b</span>
-    <span class="c1">//This assumes it is divisible</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">divide</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">absa</span> <span class="o">=</span> <span class="n">abs</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">absb</span> <span class="o">=</span> <span class="n">abs</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+<p>```java
+public class operations
+{
+	public int multiply(int a,int b)
+	{
+		if(a&lt;b)
+		{
+			return multiply(b,a);
+		}
+		int sum = 0;
+		int count = 0;
+		while(count &lt; b)
+		{
+			sum +=a;
+			count++;
+		}
+		if(b &lt; 0)
+		{
+			sum = negate(sum);
+		}
+		return sum;
+	}
+	//Subtract will require a negate helper method</p>
 
-        <span class="k">while</span> <span class="o">(</span><span class="n">current</span><span class="o">+</span><span class="n">absb</span><span class="o">&lt;=</span><span class="n">absa</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">current</span> <span class="o">+=</span><span class="n">absb</span><span class="o">;</span>
-            <span class="n">count</span><span class="o">++;</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">((</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&lt;</span><span class="mi">0</span><span class="o">))</span>
-        <span class="o">{</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="n">negate</span><span class="o">(</span><span class="n">count</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">abs</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">return</span> <span class="nf">negate</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span>
-    <span class="o">{</span>
-        <span class="n">operations</span> <span class="n">inst</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">operations</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9-3&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">inst</span><span class="o">.</span><span class="na">subtract</span><span class="o">(</span><span class="mi">9</span><span class="o">,</span><span class="mi">3</span><span class="o">));</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;abs(-9)&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">inst</span><span class="o">.</span><span class="na">abs</span><span class="o">(-</span><span class="mi">9</span><span class="o">));</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9/3&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">inst</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="mi">9</span><span class="o">,</span><span class="mi">3</span><span class="o">));</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;9*3&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">inst</span><span class="o">.</span><span class="na">multiply</span><span class="o">(</span><span class="mi">9</span><span class="o">,</span><span class="mi">3</span><span class="o">));</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;abs(9)&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;-9&quot;</span><span class="o">);</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">inst</span><span class="o">.</span><span class="na">negate</span><span class="o">(</span><span class="mi">9</span><span class="o">));</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>
+<pre><code>public int negate(int a)
+{
+	int neg = 0;
+	int d;
+	if (a &lt; 0)
+	{
+		d = 1;
+	}
+	else
+	{
+		d = -1;
+	}
+	while (a !=0)
+	{
+		neg +=d;
+		a +=d;
+	}
+	return neg;
+}
+public int subtract(int a, int b)
+{
+	return a + negate(b);
+}
+//This division will be a/b
+//This assumes it is divisible
+public int divide(int a, int b)
+{
+	int count = 0;
+	int current = 0;
+	int absa = abs(a);
+	int absb = abs(b);
+
+	while (current+absb&lt;=absa)
+	{
+		current +=absb;
+		count++;
+	}
+	if (( a&lt;0 &amp;&amp; b &gt; 0) || (a &gt; 0 &amp;&amp; b &lt;0))
+	{
+		count = negate(count);
+	}
+	return count;
+}
+public int abs(int a)
+{
+	if (a &lt; 0)
+	{
+		return negate(a);
+	}
+	return a;
+}
+public static void main(String args[])
+{
+	operations inst = new operations();
+	System.out.println("9-3");
+	System.out.println(inst.subtract(9,3));
+	System.out.println("abs(-9)");
+	System.out.println(inst.abs(-9));
+	System.out.println("9/3");
+	System.out.println(inst.divide(9,3));
+	System.out.println("9*3");
+	System.out.println(inst.multiply(9,3));
+	System.out.println("abs(9)");
+	System.out.println("-9");
+	System.out.println(inst.negate(9));
+} } ```
+</code></pre>
+
       <hr />
       <footer role="contentinfo">
         <div class="social-share">
@@ -315,7 +315,7 @@
   <footer>
     
 
-<span>&copy; 2015 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2016 Patrick Yu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
